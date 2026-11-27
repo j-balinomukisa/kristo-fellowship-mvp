@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kristo-fellowship",
+  "compatibility_date": "2026-11-27",
+  "type": "pages",
+  "pages_build_output_dir": ".",
+  "assets": {
+    "directory": "."
+  }
+}
