@@ -1,300 +1,2500 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kristo Fellowship | Faith that transforms lives</title>
-    <meta name="description" content="A Christ-centred fellowship professing God's love, advancing His Kingdom and empowering change agents through the Word, worship, family and community.">
-    <meta property="og:title" content="Kristo Fellowship">
-    <meta property="og:description" content="A Christ-centred fellowship professing God's love, advancing His Kingdom and empowering change agents.">
-    <meta property="og:type" content="website">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/svg+xml" href="assets/kristo-logo.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kristo Fellowship | Professing God's Love • Advancing His Kingdom</title>
+  <meta name="description" content="A Christ-centred fellowship professing God's love, advancing His Kingdom and empowering change agents through the Word, worship, family and community.">
+  <meta name="keywords" content="Kristo Fellowship, Christian church, discipleship, family ministry, community hooks, biblical teaching, prayer requests">
+  <meta property="og:title" content="Kristo Fellowship | Professing God's Love">
+  <meta property="og:description" content="Faith that transforms lives. Love that changes communities.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/logo-mark-transparent.png">
+
+  <!-- Structured Schema Data (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Church",
+    "name": "Kristo Fellowship",
+    "description": "Professing God's Love • Advancing His Kingdom • Empowering Change Agents",
+    "url": "https://kristofellowship.org",
+    "logo": "https://kristofellowship.org/assets/logo-full-transparent.png",
+    "event": [
+      {
+        "@type": "Event",
+        "name": "Sunday Worship & Fellowship",
+        "startDate": "2026-11-29T10:00:00+03:00",
+        "eventSchedule": {
+          "@type": "Schedule",
+          "byDay": "https://schema.org/Sunday",
+          "startTime": "10:00:00",
+          "endTime": "12:30:00"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#142B49',
+              'navy-dark': '#0c1d33',
+              'navy-light': '#1e3d67',
+              gold: '#D5AD62',
+              'gold-light': '#e5c485',
+              'gold-dark': '#b99244',
+              ivory: '#F6F3EC',
+              'ivory-dark': '#ece5d8',
+              forest: '#263B35',
+              'forest-dark': '#1a2824',
+              charcoal: '#343A40',
+              'charcoal-light': '#555d65',
+              'charcoal-muted': '#77818c'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+          },
+          boxShadow: {
+            'card': '0 4px 20px -2px rgba(20, 43, 73, 0.07)',
+            'card-hover': '0 12px 30px -4px rgba(20, 43, 73, 0.12)',
+            'gold': '0 4px 14px 0 rgba(213, 173, 98, 0.39)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #F6F3EC;
+      color: #343A40;
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #D5AD62;
+      border-radius: 9999px;
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #D5AD62 0%, #ecd097 50%, #b99244 100%);
+    }
+    .navy-gradient {
+      background: linear-gradient(145deg, #142B49 0%, #1e3d67 100%);
+    }
+    .hero-pattern {
+      background-color: #142B49;
+      background-image: radial-gradient(rgba(213, 173, 98, 0.12) 1px, transparent 1px), radial-gradient(rgba(213, 173, 98, 0.06) 1px, #142B49 1px);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+    }
+    .ivory-pattern {
+      background-color: #F6F3EC;
+      background-image: radial-gradient(#dcd5c7 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .view-section {
+      display: none;
+      animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .view-section.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body>
+<body class="bg-brand-ivory text-brand-charcoal min-h-screen flex flex-col selection:bg-brand-gold selection:text-brand-navy">
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo" aria-label="Kristo Fellowship Home">
-                <img src="assets/kristo-logo.svg" alt="Kristo Fellowship Logo" class="logo-img">
-            </a>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
+  <!-- TOP ANNOUNCEMENT BANNER -->
+  <div class="bg-brand-forest text-brand-ivory text-xs sm:text-sm py-2 px-4 border-b border-brand-forest-dark/40">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2 text-center sm:text-left">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-brand-gold text-brand-navy uppercase tracking-wider">Gathering</span>
+        <span>Sunday Fellowship: <strong>10:00 AM EAT</strong> • In-Person & Digital Broadcast</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <a href="#connect" onclick="navigateTo('connect', 'tab-prayer')" class="hover:text-brand-gold transition-colors flex items-center gap-1">
+          <i data-lucide="shield" class="w-3.5 h-3.5 text-brand-gold"></i>
+          <span>Confidential Prayer Request</span>
+        </a>
+        <span class="text-brand-ivory/30">|</span>
+        <a href="#community" onclick="navigateTo('community')" class="hover:text-brand-gold transition-colors flex items-center gap-1">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5 text-green-400"></i>
+          <span>WhatsApp Fellowship</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-brand-navy/95 backdrop-blur-md border-b border-brand-gold/20 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Official Kristo Fellowship Logo -->
+        <a href="#home" onclick="navigateTo('home')" class="flex items-center gap-3.5 group py-1">
+          <img src="assets/logo-full-transparent.png" alt="Kristo Fellowship" class="h-11 sm:h-12 md:h-13 w-auto object-contain drop-shadow group-hover:scale-105 transition-transform duration-200">
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+          <button onclick="navigateTo('home')" class="nav-link px-3 py-2 text-sm font-medium rounded-md transition-colors text-brand-gold bg-brand-navy-light/60" data-page="home">Home</button>
+          <button onclick="navigateTo('about')" class="nav-link px-3 py-2 text-sm font-medium rounded-md transition-colors text-brand-ivory/85 hover:text-brand-gold hover:bg-brand-navy-light/40" data-page="about">About Us</button>
+          <button onclick="navigateTo('pillars')" class="nav-link px-3 py-2 text-sm font-medium rounded-md transition-colors text-brand-ivory/85 hover:text-brand-gold hover:bg-brand-navy-light/40" data-page="pillars">Our Pillars</button>
+          <button onclick="navigateTo('messages')" class="nav-link px-3 py-2 text-sm font-medium rounded-md transition-colors text-brand-ivory/85 hover:text-brand-gold hover:bg-brand-navy-light/40" data-page="messages">Messages & Resources</button>
+          <button onclick="navigateTo('community')" class="nav-link px-3 py-2 text-sm font-medium rounded-md transition-colors text-brand-ivory/85 hover:text-brand-gold hover:bg-brand-navy-light/40" data-page="community">Community</button>
+          <button onclick="navigateTo('connect')" class="nav-link px-3 py-2 text-sm font-medium rounded-md transition-colors text-brand-ivory/85 hover:text-brand-gold hover:bg-brand-navy-light/40" data-page="connect">Connect</button>
+        </nav>
+
+        <!-- Right Action Button -->
+        <div class="hidden lg:flex items-center gap-3">
+          <button onclick="openPrayerModal()" class="px-3.5 py-2 text-xs font-semibold rounded-md border border-brand-gold/60 text-brand-gold hover:bg-brand-gold/10 transition-colors flex items-center gap-1.5">
+            <i data-lucide="heart" class="w-3.5 h-3.5"></i>
+            <span>Need Prayer?</span>
+          </button>
+          <button onclick="navigateTo('connect', 'tab-join')" class="px-4 py-2 text-xs font-semibold rounded-md bg-brand-gold text-brand-navy hover:bg-brand-gold-light transition-all shadow-gold hover:shadow-lg font-medium">
+            Join Fellowship
+          </button>
+        </div>
+
+        <!-- Mobile Menu Trigger -->
+        <div class="flex lg:hidden items-center gap-2">
+          <button onclick="openPrayerModal()" class="p-2 text-brand-gold hover:text-brand-gold-light focus:outline-none" title="Prayer Request">
+            <i data-lucide="heart" class="w-5 h-5"></i>
+          </button>
+          <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 rounded-md text-brand-ivory hover:text-brand-gold hover:bg-brand-navy-light focus:outline-none" aria-label="Toggle Navigation">
+            <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-brand-navy border-t border-brand-gold/20 px-4 pt-3 pb-6 space-y-2">
+      <button onclick="navigateTo('home'); toggleMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-md text-base font-medium text-brand-ivory hover:bg-brand-navy-light hover:text-brand-gold">Home</button>
+      <button onclick="navigateTo('about'); toggleMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-md text-base font-medium text-brand-ivory hover:bg-brand-navy-light hover:text-brand-gold">About Us</button>
+      <button onclick="navigateTo('pillars'); toggleMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-md text-base font-medium text-brand-ivory hover:bg-brand-navy-light hover:text-brand-gold">Our Seven Pillars</button>
+      <button onclick="navigateTo('messages'); toggleMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-md text-base font-medium text-brand-ivory hover:bg-brand-navy-light hover:text-brand-gold">Messages & Resources</button>
+      <button onclick="navigateTo('community'); toggleMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-md text-base font-medium text-brand-ivory hover:bg-brand-navy-light hover:text-brand-gold">Community & Hooks</button>
+      <button onclick="navigateTo('connect'); toggleMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-md text-base font-medium text-brand-ivory hover:bg-brand-navy-light hover:text-brand-gold">Connect & Volunteer</button>
+      
+      <div class="pt-4 border-t border-brand-navy-light flex flex-col gap-2">
+        <button onclick="openPrayerModal(); toggleMobileMenu();" class="w-full py-2.5 px-4 text-center text-sm font-semibold rounded-md border border-brand-gold text-brand-gold hover:bg-brand-gold/10">
+          <i data-lucide="shield" class="w-4 h-4 inline mr-1 text-brand-gold"></i> Submit Confidential Prayer Request
+        </button>
+        <button onclick="navigateTo('connect', 'tab-join'); toggleMobileMenu();" class="w-full py-2.5 px-4 text-center text-sm font-semibold rounded-md bg-brand-gold text-brand-navy hover:bg-brand-gold-light shadow-gold">
+          Join Kristo Fellowship
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER (SPA VIEWS) -->
+  <main class="flex-grow">
+
+    <!-- ========================================== -->
+    <!-- 1. HOME VIEW (view-home) -->
+    <!-- ========================================== -->
+    <section id="view-home" class="view-section active">
+      <!-- HERO SECTION -->
+      <div class="hero-pattern text-brand-ivory pt-16 pb-20 md:pt-24 md:pb-28 relative overflow-hidden border-b border-brand-gold/20">
+        <!-- Ambient Glow Circles -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand-gold/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-brand-forest/30 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+              <!-- Eyebrow Badge -->
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-navy-light/80 border border-brand-gold/40 text-brand-gold text-xs font-semibold tracking-wider uppercase">
+                <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                <span>Christ-Centred • Kingdom-Focused • Transformational</span>
+              </div>
+
+              <!-- Main Headline -->
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-brand-ivory leading-[1.15] tracking-tight">
+                Faith that transforms lives. <br/>
+                <span class="text-transparent bg-clip-text gold-gradient">Love that changes communities.</span>
+              </h1>
+
+              <!-- Supporting Copy -->
+              <p class="text-lg sm:text-xl text-brand-ivory/80 max-w-2xl font-light leading-relaxed">
+                A Christ-centred fellowship professing God's love, advancing His Kingdom and empowering change agents through the Word, worship, family and community.
+              </p>
+
+              <!-- Calls To Action -->
+              <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <button onclick="navigateTo('connect', 'tab-join')" class="w-full sm:w-auto px-7 py-3.5 rounded-md bg-brand-gold text-brand-navy font-semibold text-sm hover:bg-brand-gold-light transition-all shadow-gold hover:shadow-lg flex items-center justify-center gap-2">
+                  <span>Join the Fellowship</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+                <button onclick="navigateTo('about')" class="w-full sm:w-auto px-7 py-3.5 rounded-md border border-brand-ivory/30 text-brand-ivory font-medium text-sm hover:bg-brand-navy-light hover:border-brand-gold transition-colors flex items-center justify-center gap-2">
+                  <span>Discover Kristo</span>
+                  <i data-lucide="compass" class="w-4 h-4 text-brand-gold"></i>
+                </button>
+                <button onclick="openPrayerModal()" class="w-full sm:w-auto px-5 py-3.5 text-xs text-brand-gold hover:underline flex items-center justify-center gap-1.5 font-medium">
+                  <i data-lucide="shield-check" class="w-4 h-4 text-brand-gold"></i>
+                  <span>Submit Private Prayer</span>
+                </button>
+              </div>
+
+              <!-- Key Pillars Strip -->
+              <div class="pt-8 grid grid-cols-3 gap-4 border-t border-brand-ivory/10 text-left">
+                <div>
+                  <div class="text-2xl font-serif font-bold text-brand-gold">7</div>
+                  <div class="text-xs text-brand-ivory/70 uppercase tracking-wider">Foundational Pillars</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-serif font-bold text-brand-gold">Hooks</div>
+                  <div class="text-xs text-brand-ivory/70 uppercase tracking-wider">House Fellowships</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-serif font-bold text-brand-gold">100%</div>
+                  <div class="text-xs text-brand-ivory/70 uppercase tracking-wider">Confidential Prayer</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Feature Card: Latest Teaching & Fellowship Highlight -->
+            <div class="lg:col-span-5">
+              <div class="bg-brand-navy-light/70 backdrop-blur border border-brand-gold/30 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+                <div class="flex items-center justify-between pb-4 border-b border-brand-ivory/10">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-brand-gold"></span>
+                    <span class="text-xs font-semibold tracking-wider uppercase text-brand-gold">Featured Message</span>
+                  </div>
+                  <span class="text-xs text-brand-ivory/60">Nov 2026</span>
+                </div>
+
+                <!-- Video Preview Box -->
+                <div class="mt-4 relative rounded-xl overflow-hidden group cursor-pointer aspect-video bg-brand-navy border border-brand-gold/20" onclick="playVideo('dQw4w9WgXcQ', 'Empowering Change Agents in the Marketplace', 'Pastor David & Leadership')">
+                  <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80" alt="Fellowship Gathering" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-75">
+                  <div class="absolute inset-0 bg-brand-navy/50 group-hover:bg-brand-navy/30 transition-colors flex items-center justify-center">
+                    <div class="w-14 h-14 rounded-full bg-brand-gold/90 text-brand-navy flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform">
+                      <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-2 right-2 bg-brand-navy/90 text-[11px] px-2 py-0.5 rounded text-brand-ivory">
+                    Teaching & Discipleship
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <h3 class="font-serif text-lg font-bold text-brand-ivory group-hover:text-brand-gold">
+                    Empowering Change Agents: Living Out Faith in the Marketplace
+                  </h3>
+                  <p class="text-xs text-brand-ivory/70 mt-1 line-clamp-2">
+                    Discover how ordinary believers are called to be salt, light, and ethical change agents in their homes, businesses, and communities.
+                  </p>
+                  <div class="mt-4 pt-4 border-t border-brand-ivory/10 flex items-center justify-between">
+                    <button onclick="playVideo('dQw4w9WgXcQ', 'Empowering Change Agents in the Marketplace', 'Pastor David & Leadership')" class="text-xs text-brand-gold font-semibold flex items-center gap-1 hover:underline">
+                      <i data-lucide="play-circle" class="w-4 h-4"></i> Watch Video Message
+                    </button>
+                    <button onclick="navigateTo('messages')" class="text-xs text-brand-ivory/70 hover:text-brand-ivory">
+                      Browse Library →
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- WELCOME & POSITIONING STATEMENT -->
+      <section class="py-16 bg-brand-ivory border-b border-brand-ivory-dark">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+          <div class="inline-flex items-center gap-1 text-brand-gold-dark text-xs font-bold uppercase tracking-widest">
+            <i data-lucide="sparkles" class="w-4 h-4 text-brand-gold"></i>
+            <span>Our Brand Foundation & Calling</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-brand-navy">
+            Equipping Individuals and Families Through Word, Worship, and Community
+          </h2>
+          <p class="text-base sm:text-lg text-brand-charcoal-light leading-relaxed max-w-3xl mx-auto">
+            Kristo Fellowship is not just a Sunday assembly. We are a family of believers devoted to sound biblical doctrine, authentic intergenerational relationships, compassionate pastoral care, and raising empowered change agents who represent Christ in every sphere of life.
+          </p>
+
+          <!-- 3 Mission Anchors -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-left">
+            <div class="bg-white p-6 rounded-xl border border-brand-ivory-dark shadow-card hover:shadow-card-hover transition-all">
+              <div class="w-12 h-12 rounded-lg bg-brand-navy/5 text-brand-navy flex items-center justify-center mb-4">
+                <i data-lucide="heart-handshake" class="w-6 h-6 text-brand-gold-dark"></i>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-navy mb-2">Professing God's Love</h3>
+              <p class="text-sm text-brand-charcoal-muted leading-relaxed">
+                Demonstrating unconditional, Christ-like love in practical acts of service, compassionate pastoral care, and sincere fellowship.
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl border border-brand-ivory-dark shadow-card hover:shadow-card-hover transition-all">
+              <div class="w-12 h-12 rounded-lg bg-brand-navy/5 text-brand-navy flex items-center justify-center mb-4">
+                <i data-lucide="crown" class="w-6 h-6 text-brand-gold-dark"></i>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-navy mb-2">Advancing His Kingdom</h3>
+              <p class="text-sm text-brand-charcoal-muted leading-relaxed">
+                Proclaiming the uncompromised Gospel through Bible-based teaching, vibrant worship, prayer altars, and active evangelistic missions.
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl border border-brand-ivory-dark shadow-card hover:shadow-card-hover transition-all">
+              <div class="w-12 h-12 rounded-lg bg-brand-navy/5 text-brand-navy flex items-center justify-center mb-4">
+                <i data-lucide="zap" class="w-6 h-6 text-brand-gold-dark"></i>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-navy mb-2">Empowering Change Agents</h3>
+              <p class="text-sm text-brand-charcoal-muted leading-relaxed">
+                Equipping children, youth, couples, and marketplace professionals to influence their industries with integrity, excellence, and faith.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEVEN PILLARS PREVIEW -->
+      <section class="py-20 bg-white border-b border-brand-ivory-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+              <span class="text-brand-gold-dark font-bold text-xs uppercase tracking-widest block mb-1">Foundational Framework</span>
+              <h2 class="text-3xl sm:text-4xl font-serif font-bold text-brand-navy">The Seven Pillars of Kristo Fellowship</h2>
+              <p class="text-brand-charcoal-light text-sm sm:text-base mt-2 max-w-2xl">
+                Every ministry initiative, teaching series, and community gathering flows from our seven pillars designed to nurture holistic spiritual maturity.
+              </p>
+            </div>
+            <button onclick="navigateTo('pillars')" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-navy hover:text-brand-gold transition-colors">
+              <span>Explore all pillars in detail</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li><a href="pillars.html" class="nav-link">Our Pillars</a></li>
-                <li><a href="messages.html" class="nav-link">Messages &amp; Resources</a></li>
-                <li><a href="community.html" class="nav-link">Community</a></li>
-                <li><a href="connect.html" class="nav-link">Connect</a></li>
-            </ul>
-        </div>
-    </nav>
+          </div>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <img src="assets/kristo-logo.svg" alt="Kristo Fellowship Logo" class="hero-logo">
-            <span class="hero-kicker">Kristo Fellowship</span>
-            <h1 class="hero-title">Faith that transforms lives.<br>Love that changes communities.</h1>
-            <p class="hero-subtitle">A Christ-centred fellowship professing God's love, advancing His Kingdom and empowering change agents through the Word, worship, family and community.</p>
-            <div class="hero-actions">
-                <a href="about.html" class="btn btn-primary">Discover Kristo</a>
-                <a href="connect.html" class="btn btn-outline">Join the Fellowship</a>
+          <!-- 7 Pillar Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- 1. Family -->
+            <div class="bg-brand-ivory/60 rounded-xl p-6 border border-brand-ivory-dark hover:border-brand-gold/60 transition-all group">
+              <div class="w-10 h-10 rounded-lg bg-brand-navy text-brand-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="users" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-navy mb-1">1. Family</h3>
+              <p class="text-xs text-brand-gold-dark font-medium mb-2">Vines • Youth • Couples</p>
+              <p class="text-xs text-brand-charcoal-muted leading-relaxed mb-4">
+                Strengthening intergenerational godly homes, nurturing children in faith, and establishing resilient marriage relationships.
+              </p>
+              <button onclick="navigateTo('pillars', 'pillar-family')" class="text-xs font-semibold text-brand-navy hover:text-brand-gold inline-flex items-center gap-1">
+                View Family Pillar →
+              </button>
             </div>
-        </div>
-    </header>
 
-    <!-- Welcome Section -->
-    <section class="welcome section">
-        <div class="container">
-            <div class="welcome-content">
-                <div class="welcome-text">
-                    <h2 class="section-title">Welcome to Kristo Fellowship</h2>
-                    <p class="lead">We are a Christ-centred community dedicated to knowing Jesus and making Him known. Whether you're seeking spiritual growth, family connection, or a place to belong, you're welcome here.</p>
-                    <div class="welcome-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">7</span>
-                            <span class="stat-label">Pillars of Fellowship</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-divider"></span>
-                            <span class="stat-number">All Ages</span>
-                            <span class="stat-label">Families Welcome</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-divider"></span>
-                            <span class="stat-number">Weekly</span>
-                            <span class="stat-label">Services &amp; Gatherings</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="welcome-image">
-                    <div class="image-placeholder"></div>
-                </div>
+            <!-- 2. Word -->
+            <div class="bg-brand-ivory/60 rounded-xl p-6 border border-brand-ivory-dark hover:border-brand-gold/60 transition-all group">
+              <div class="w-10 h-10 rounded-lg bg-brand-navy text-brand-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="book-open" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-navy mb-1">2. Word</h3>
+              <p class="text-xs text-brand-gold-dark font-medium mb-2">Scripture • Discipleship</p>
+              <p class="text-xs text-brand-charcoal-muted leading-relaxed mb-4">
+                Expository Bible teaching, foundational discipleship classes, and grounding believers in unshakeable truth.
+              </p>
+              <button onclick="navigateTo('pillars', 'pillar-word')" class="text-xs font-semibold text-brand-navy hover:text-brand-gold inline-flex items-center gap-1">
+                View Word Pillar →
+              </button>
             </div>
+
+            <!-- 3. Worship -->
+            <div class="bg-brand-ivory/60 rounded-xl p-6 border border-brand-ivory-dark hover:border-brand-gold/60 transition-all group">
+              <div class="w-10 h-10 rounded-lg bg-brand-navy text-brand-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="flame" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-navy mb-1">3. Worship</h3>
+              <p class="text-xs text-brand-gold-dark font-medium mb-2">Lifestyle • Prayer Altars</p>
+              <p class="text-xs text-brand-charcoal-muted leading-relaxed mb-4">
+                Cultivating an uninterrupted lifestyle of praise, intimate communion with God, and fervent prayer altars.
+              </p>
+              <button onclick="navigateTo('pillars', 'pillar-worship')" class="text-xs font-semibold text-brand-navy hover:text-brand-gold inline-flex items-center gap-1">
+                View Worship Pillar →
+              </button>
+            </div>
+
+            <!-- 4. Care -->
+            <div class="bg-brand-ivory/60 rounded-xl p-6 border border-brand-ivory-dark hover:border-brand-gold/60 transition-all group">
+              <div class="w-10 h-10 rounded-lg bg-brand-navy text-brand-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="shield" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-navy mb-1">4. Care</h3>
+              <p class="text-xs text-brand-gold-dark font-medium mb-2">Confidential Counselling • Support</p>
+              <p class="text-xs text-brand-charcoal-muted leading-relaxed mb-4">
+                Confidential pastoral counselling, emergency compassionate aid, and standing with members through every season.
+              </p>
+              <button onclick="navigateTo('pillars', 'pillar-care')" class="text-xs font-semibold text-brand-navy hover:text-brand-gold inline-flex items-center gap-1">
+                View Care Pillar →
+              </button>
+            </div>
+
+            <!-- 5. Community -->
+            <div class="bg-brand-ivory/60 rounded-xl p-6 border border-brand-ivory-dark hover:border-brand-gold/60 transition-all group">
+              <div class="w-10 h-10 rounded-lg bg-brand-navy text-brand-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="home" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-navy mb-1">5. Community</h3>
+              <p class="text-xs text-brand-gold-dark font-medium mb-2">Hooks • House Fellowships</p>
+              <p class="text-xs text-brand-charcoal-muted leading-relaxed mb-4">
+                Small-group house fellowships ("Hooks") where real life is shared, food is broken, and authentic care happens.
+              </p>
+              <button onclick="navigateTo('pillars', 'pillar-community')" class="text-xs font-semibold text-brand-navy hover:text-brand-gold inline-flex items-center gap-1">
+                View Community Pillar →
+              </button>
+            </div>
+
+            <!-- 6. Missions -->
+            <div class="bg-brand-ivory/60 rounded-xl p-6 border border-brand-ivory-dark hover:border-brand-gold/60 transition-all group">
+              <div class="w-10 h-10 rounded-lg bg-brand-navy text-brand-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="globe" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-navy mb-1">6. Missions</h3>
+              <p class="text-xs text-brand-gold-dark font-medium mb-2">Outreach • Digital Ministry</p>
+              <p class="text-xs text-brand-charcoal-muted leading-relaxed mb-4">
+                Taking the Gospel outside church buildings into underprivileged communities, schools, and digital spaces.
+              </p>
+              <button onclick="navigateTo('pillars', 'pillar-missions')" class="text-xs font-semibold text-brand-navy hover:text-brand-gold inline-flex items-center gap-1">
+                View Missions Pillar →
+              </button>
+            </div>
+
+            <!-- 7. Marketplace -->
+            <div class="bg-brand-ivory/60 rounded-xl p-6 border border-brand-ivory-dark hover:border-brand-gold/60 transition-all group sm:col-span-2 lg:col-span-2">
+              <div class="w-10 h-10 rounded-lg bg-brand-navy text-brand-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="briefcase" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-navy mb-1">7. Marketplace</h3>
+              <p class="text-xs text-brand-gold-dark font-medium mb-2">Workplace Faith • Ethical Business • Societal Impact</p>
+              <p class="text-xs text-brand-charcoal-muted leading-relaxed mb-4">
+                Equipping professionals, leaders, and entrepreneurs to conduct business with Christian integrity, solve systemic problems, and transform culture from within.
+              </p>
+              <button onclick="navigateTo('pillars', 'pillar-marketplace')" class="text-xs font-semibold text-brand-navy hover:text-brand-gold inline-flex items-center gap-1">
+                View Marketplace Pillar →
+              </button>
+            </div>
+
+          </div>
         </div>
+      </section>
+
+      <!-- SCRIPTURE OF THE WEEK -->
+      <section class="py-16 bg-brand-forest text-brand-ivory relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-forest-dark/60 border border-brand-gold/40 text-brand-gold text-xs font-semibold uppercase tracking-wider">
+            <i data-lucide="bookmark" class="w-3.5 h-3.5"></i>
+            <span>Scripture of the Week</span>
+          </div>
+
+          <blockquote class="text-2xl sm:text-3xl lg:text-4xl font-serif italic text-brand-ivory leading-relaxed">
+            “Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!”
+          </blockquote>
+
+          <div class="text-brand-gold font-semibold tracking-wider uppercase text-sm">
+            — 2 Corinthians 5:17 (NIV)
+          </div>
+
+          <p class="text-sm text-brand-ivory/80 max-w-xl mx-auto font-light leading-relaxed">
+            In Christ, your past does not define your future. Walk this week empowered as an ambassador of reconciliation and a bearer of His transforming love.
+          </p>
+
+          <div class="pt-2">
+            <button onclick="navigateTo('messages')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-brand-gold text-brand-navy text-xs font-bold hover:bg-brand-gold-light transition-colors shadow-gold">
+              <i data-lucide="book-marked" class="w-4 h-4"></i>
+              <span>Download Weekly Study Notes</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- UPCOMING ACTIVITIES & GATHERINGS -->
+      <section class="py-20 bg-brand-ivory">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-brand-gold-dark font-bold text-xs uppercase tracking-widest block mb-1">Calendar & Gatherings</span>
+            <h2 class="text-3xl font-serif font-bold text-brand-navy">Upcoming Fellowship Activities</h2>
+            <p class="text-sm text-brand-charcoal-light mt-2">
+              Connect with us throughout the week in prayer, word study, and community house fellowships.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Event 1 -->
+            <div class="bg-white rounded-xl p-6 border border-brand-ivory-dark shadow-card flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs text-brand-gold-dark font-semibold uppercase mb-3">
+                  <span class="bg-brand-navy/5 px-2.5 py-1 rounded">Weekly Service</span>
+                  <span>Sundays • 10:00 AM</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-brand-navy mb-2">Sunday Worship & Fellowship</h3>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                  Join us for corporate worship, anointed ministry of the Word, and intergenerational family fellowship. Children ministry (Vines) provided.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-brand-ivory-dark flex items-center justify-between text-xs">
+                <span class="text-brand-charcoal-light flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-gold-dark"></i> Main Hall & Online</span>
+                <button onclick="navigateTo('connect', 'tab-join')" class="text-brand-gold-dark font-semibold hover:underline">Attend →</button>
+              </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="bg-white rounded-xl p-6 border border-brand-ivory-dark shadow-card flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs text-brand-gold-dark font-semibold uppercase mb-3">
+                  <span class="bg-brand-navy/5 px-2.5 py-1 rounded">House Church</span>
+                  <span>Wednesdays • 6:30 PM</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-brand-navy mb-2">Community Hooks (Home Cell)</h3>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                  Intimate home fellowship gatherings across neighborhood clusters for dinner, deep scripture application, and personal prayer support.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-brand-ivory-dark flex items-center justify-between text-xs">
+                <span class="text-brand-charcoal-light flex items-center gap-1"><i data-lucide="home" class="w-3.5 h-3.5 text-brand-gold-dark"></i> Local Neighborhoods</span>
+                <button onclick="navigateTo('community')" class="text-brand-gold-dark font-semibold hover:underline">Find Hook →</button>
+              </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="bg-white rounded-xl p-6 border border-brand-ivory-dark shadow-card flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs text-brand-gold-dark font-semibold uppercase mb-3">
+                  <span class="bg-brand-navy/5 px-2.5 py-1 rounded">Family Pillar</span>
+                  <span>Every 2nd Saturday • 3:00 PM</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-brand-navy mb-2">Couples & Courtship Roundtable</h3>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                  Practical wisdom, marriage communication, and biblical alignment for married and courting couples.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-brand-ivory-dark flex items-center justify-between text-xs">
+                <span class="text-brand-charcoal-light flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5 text-brand-gold-dark"></i> Fellowship Lounge</span>
+                <button onclick="navigateTo('community')" class="text-brand-gold-dark font-semibold hover:underline">Register →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONFIDENTIAL PRAYER BANNER -->
+      <section class="py-14 bg-brand-navy text-brand-ivory border-t border-brand-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="bg-brand-navy-light/60 rounded-2xl p-8 sm:p-12 border border-brand-gold/30 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="space-y-3 text-center md:text-left">
+              <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-gold">
+                <i data-lucide="lock" class="w-4 h-4"></i>
+                <span>Strictly Confidential Pastoral Care</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-serif font-bold text-brand-ivory">
+                Are you facing a burden? We stand with you in prayer.
+              </h2>
+              <p class="text-sm text-brand-ivory/80 max-w-xl">
+                Every prayer request is treated with the highest pastoral discretion. Only authorized intercessors review your request, and your details will never be made public.
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+              <button onclick="openPrayerModal()" class="px-6 py-3.5 rounded-md bg-brand-gold text-brand-navy font-semibold text-sm hover:bg-brand-gold-light transition-all shadow-gold whitespace-nowrap text-center">
+                Submit Prayer Request
+              </button>
+              <button onclick="navigateTo('connect', 'tab-counsel')" class="px-6 py-3.5 rounded-md border border-brand-ivory/30 text-brand-ivory font-medium text-sm hover:bg-brand-navy transition-colors whitespace-nowrap text-center">
+                Request Counselling
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
 
-    <!-- Vision & Mission Section -->
-    <section class="vision-mission section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Vision &amp; Mission</h2>
-                <p class="section-subtitle">Professing God's Love • Advancing His Kingdom • Empowering Change Agents</p>
-            </div>
-            <div class="vision-mission-grid">
-                <div class="vm-card">
-                    <div class="vm-icon">❤️</div>
-                    <h3>Vision</h3>
-                    <p>A fellowship where every person encounters Christ, is discipled in the Word, and is equipped to impact their world for the Kingdom of God.</p>
-                </div>
-                <div class="vm-card">
-                    <div class="vm-icon">📖</div>
-                    <h3>Mission</h3>
-                    <p>To build Christ-centred families and communities through biblical teaching, worship, relationships, and service that transforms lives and advances His Kingdom.</p>
-                </div>
-                <div class="vm-card">
-                    <div class="vm-icon">🤝</div>
-                    <h3>Values</h3>
-                    <p>Christ-centred • Welcoming • Family-oriented • Biblical • Contemporary • Community-driven • Spiritually empowering</p>
-                </div>
-            </div>
+    <!-- ========================================== -->
+    <!-- 2. ABOUT US VIEW (view-about) -->
+    <!-- ========================================== -->
+    <section id="view-about" class="view-section">
+      <!-- About Hero -->
+      <div class="bg-brand-navy text-brand-ivory py-16 sm:py-24 border-b border-brand-gold/20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-4">
+          <span class="text-brand-gold text-xs font-bold uppercase tracking-widest block">About Kristo Fellowship</span>
+          <h1 class="text-4xl sm:text-5xl font-serif font-bold text-brand-ivory">
+            Our Story, Heart & Doctrine
+          </h1>
+          <p class="text-base sm:text-lg text-brand-ivory/80 max-w-2xl mx-auto font-light">
+            Rooted in the timeless truth of Scripture, committed to relational community, and dedicated to raising salt and light in our generation.
+          </p>
         </div>
-    </section>
-    <!-- Seven Pillars Preview Section -->
-    <section class="pillars-preview section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Seven Pillars</h2>
-                <p class="section-subtitle">The foundations of our fellowship life</p>
+      </div>
+
+      <!-- Story & Vision Content -->
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+        <!-- Section: Our Story -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-7 space-y-4">
+            <span class="text-brand-gold-dark font-bold text-xs uppercase tracking-wider">The Journey</span>
+            <h2 class="text-3xl font-serif font-bold text-brand-navy">Our Story</h2>
+            <p class="text-brand-charcoal-light leading-relaxed text-sm sm:text-base">
+              Kristo Fellowship was birthed from a deep spiritual conviction: that the Church of Jesus Christ must be both the pillar of uncompromising biblical doctrine and a warm, loving household where weary hearts find healing, families are strengthened, and believers are equipped for marketplace impact.
+            </p>
+            <p class="text-brand-charcoal-light leading-relaxed text-sm sm:text-base">
+              Moving beyond traditional Sunday-only routines, our vision has always been to weave Christ into everyday spaces—around dinner tables in house fellowships (Hooks), in boardroom decisions, and through intergenerational family discipleship.
+            </p>
+          </div>
+          <div class="md:col-span-5">
+            <div class="bg-brand-navy p-6 rounded-2xl border border-brand-gold/30 shadow-card space-y-4 text-center">
+              <img src="assets/logo-full-transparent.png" alt="Kristo Fellowship Official Logo" class="h-16 w-auto mx-auto object-contain drop-shadow">
+              <div class="border-t border-brand-gold/20 pt-3 text-left">
+                <div class="text-[10px] font-bold uppercase tracking-widest text-brand-gold">Our Positioning</div>
+                <div class="font-serif text-lg font-bold text-brand-ivory mt-0.5">A Christ-Centred Fellowship</div>
+                <p class="text-xs text-brand-ivory/80 leading-relaxed mt-1">
+                  Equipping individuals and families through the Word, worship, relationships, community and service.
+                </p>
+              </div>
+              <div class="pt-2 border-t border-brand-ivory/10 flex flex-wrap gap-2 text-[10px] font-semibold text-brand-gold">
+                <span class="bg-brand-navy-light px-2.5 py-1 rounded">Biblical</span>
+                <span class="bg-brand-navy-light px-2.5 py-1 rounded">Welcoming</span>
+                <span class="bg-brand-navy-light px-2.5 py-1 rounded">Family-Oriented</span>
+                <span class="bg-brand-navy-light px-2.5 py-1 rounded">Empowering</span>
+              </div>
             </div>
-            <div class="pillars-grid">
-                <div class="pillar-card">
-                    <div class="pillar-icon">👨‍👩‍👧‍👦</div>
-                    <h3>Family</h3>
-                    <p>Strengthening families through biblical principles, relationships and intergenerational fellowship.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon">📖</div>
-                    <h3>Word</h3>
-                    <p>Biblical teaching, discipleship, Bible study and spiritual growth.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon">🎵</div>
-                    <h3>Worship</h3>
-                    <p>Building a lifestyle of worship, prayer and intimacy with God.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon">🤲</div>
-                    <h3>Care</h3>
-                    <p>Supporting individuals and families through counselling, compassion, prayer and practical support.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon">🏘️</div>
-                    <h3>Community</h3>
-                    <p>Building meaningful relationships through fellowship, shared experiences and community house fellowships (Hooks).</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon">🌍</div>
-                    <h3>Missions</h3>
-                    <p>Taking the Gospel beyond traditional church settings through evangelism, digital ministry, outreach and missions.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon">💼</div>
-                    <h3>Marketplace</h3>
-                    <p>Equipping believers to live out their faith, influence workplaces, conduct business ethically and create meaningful impact.</p>
-                </div>
-            </div>
-            <a href="pillars.html" class="btn btn-primary btn-explore">Explore the Pillars</a>
+          </div>
         </div>
-    </section>
-    <!-- Latest Teachings Section -->
-    <section class="teachings section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Latest Teachings</h2>
-                <p class="section-subtitle">Recent sermons and resources</p>
+
+        <!-- Vision and Mission Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+          <div class="bg-white p-8 rounded-2xl border-t-4 border-brand-navy shadow-card">
+            <div class="w-12 h-12 rounded-lg bg-brand-navy/5 text-brand-navy flex items-center justify-center mb-4">
+              <i data-lucide="eye" class="w-6 h-6 text-brand-gold-dark"></i>
             </div>
-            <div class="teachings-grid">
-                <div class="teaching-card">
-                    <div class="teaching-thumbnail"></div>
-                    <div class="teaching-info">
-                        <span class="teaching-topic">Faith</span>
-                        <h3>Faith That Moves Mountains</h3>
-                        <p class="teaching-speaker">Pastor John Kristo • 2 weeks ago</p>
-                        <a href="messages.html" class="btn btn-sm btn-outline">Watch Teaching</a>
-                    </div>
-                </div>
-                <div class="teaching-card">
-                    <div class="teaching-thumbnail"></div>
-                    <div class="teaching-info">
-                        <span class="teaching-topic">Family</span>
-                        <h3>Building Christ-Centred Homes</h3>
-                        <p class="teaching-speaker">Elder Mary James • 3 weeks ago</p>
-                        <a href="messages.html" class="btn btn-sm btn-outline">Watch Teaching</a>
-                    </div>
-                </div>
-                <div class="teaching-card">
-                    <div class="teaching-thumbnail"></div>
-                    <div class="teaching-info">
-                        <span class="teaching-topic">Missions</span>
-                        <h3>Advancing His Kingdom</h3>
-                        <p class="teaching-speaker">Rev. Sarah Peters • 1 month ago</p>
-                        <a href="messages.html" class="btn btn-sm btn-outline">Watch Teaching</a>
-                    </div>
-                </div>
+            <h3 class="font-serif text-2xl font-bold text-brand-navy mb-3">Our Vision</h3>
+            <p class="text-sm sm:text-base text-brand-charcoal-light leading-relaxed">
+              To be a vibrant, Christ-centred movement of believers actively professing God’s love, advancing His Kingdom, and raising generational change agents who transform families, workplaces, and communities.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border-t-4 border-brand-gold shadow-card">
+            <div class="w-12 h-12 rounded-lg bg-brand-navy/5 text-brand-navy flex items-center justify-center mb-4">
+              <i data-lucide="compass" class="w-6 h-6 text-brand-gold-dark"></i>
             </div>
-            <a href="messages.html" class="btn btn-primary btn-block">View All Teachings</a>
+            <h3 class="font-serif text-2xl font-bold text-brand-navy mb-3">Our Mission</h3>
+            <p class="text-sm sm:text-base text-brand-charcoal-light leading-relaxed">
+              To nurture disciples through deep biblical teaching, cultivate passionate worship and prayer altars, provide safe and confidential pastoral care, strengthen godly marriages and youth, and commission believers into the marketplace.
+            </p>
+          </div>
         </div>
-    </section>
-    <!-- Community Section -->
-    <section class="community section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Connect with Community</h2>
-                <p class="section-subtitle">Find your place in the fellowship</p>
+
+        <!-- What We Believe (Statement of Faith) -->
+        <div class="bg-white p-8 sm:p-12 rounded-2xl border border-brand-ivory-dark shadow-card space-y-6">
+          <div class="text-center max-w-2xl mx-auto">
+            <span class="text-brand-gold-dark font-bold text-xs uppercase tracking-widest block mb-1">Doctrinal Tenets</span>
+            <h2 class="text-3xl font-serif font-bold text-brand-navy">What We Believe</h2>
+            <p class="text-xs sm:text-sm text-brand-charcoal-muted mt-1">Our uncompromised biblical foundation</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 text-left">
+            <div class="p-4 rounded-lg bg-brand-ivory/50 border border-brand-ivory-dark">
+              <h4 class="font-serif font-bold text-brand-navy text-base mb-1.5 flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-brand-gold-dark"></i>
+                1. The Holy Scriptures
+              </h4>
+              <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                We believe the 66 books of the Holy Bible are the verbally inspired, inerrant, and authoritative Word of God, our supreme rule for faith, practice, and doctrine.
+              </p>
             </div>
-            <div class="community-grid">
-                <div class="community-card">
-                    <h3>Family Communities</h3>
-                    <ul>
-                        <li>Vines – Children's ministry</li>
-                        <li>Youth – Teen &amp; young adult fellowship</li>
-                        <li>Couples – Married and courting couples</li>
-                    </ul>
-                    <a href="community.html" class="btn btn-sm btn-outline">Learn More</a>
-                </div>
-                <div class="community-card">
-                    <h3>Community Hooks</h3>
-                    <ul>
-                        <li>Home fellowships</li>
-                        <li>Group discussions</li>
-                        <li>Local gatherings</li>
-                    </ul>
-                    <a href="community.html" class="btn btn-sm btn-outline">Learn More</a>
-                </div>
-                <div class="community-card">
-                    <h3>Online Fellowship</h3>
-                    <ul>
-                        <li>Prayer meetings</li>
-                        <li>Bible study groups</li>
-                        <li>Digital community groups</li>
-                    </ul>
-                    <a href="community.html" class="btn btn-sm btn-outline">Learn More</a>
-                </div>
+
+            <div class="p-4 rounded-lg bg-brand-ivory/50 border border-brand-ivory-dark">
+              <h4 class="font-serif font-bold text-brand-navy text-base mb-1.5 flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-brand-gold-dark"></i>
+                2. The Triune God
+              </h4>
+              <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                We believe in one God, eternally existent in three distinct co-equal persons: Father, Son, and Holy Spirit.
+              </p>
             </div>
+
+            <div class="p-4 rounded-lg bg-brand-ivory/50 border border-brand-ivory-dark">
+              <h4 class="font-serif font-bold text-brand-navy text-base mb-1.5 flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-brand-gold-dark"></i>
+                3. The Person & Work of Jesus Christ
+              </h4>
+              <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                We believe in His virgin birth, sinless life, substitutionary atoning death on the cross, bodily resurrection, ascension to the right hand of the Father, and personal return.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-brand-ivory/50 border border-brand-ivory-dark">
+              <h4 class="font-serif font-bold text-brand-navy text-base mb-1.5 flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-brand-gold-dark"></i>
+                4. Salvation by Grace
+              </h4>
+              <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                Man is justified solely by God's grace through faith in Jesus Christ, regenerated by the Holy Spirit unto eternal life.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-brand-ivory/50 border border-brand-ivory-dark">
+              <h4 class="font-serif font-bold text-brand-navy text-base mb-1.5 flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-brand-gold-dark"></i>
+                5. The Covenant of Family
+              </h4>
+              <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                God instituted the family as the cornerstone of society. We uphold biblical marriage, covenant faithfulness, and the intentional discipleship of children.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-brand-ivory/50 border border-brand-ivory-dark">
+              <h4 class="font-serif font-bold text-brand-navy text-base mb-1.5 flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-brand-gold-dark"></i>
+                6. The Great Commission & Marketplace
+              </h4>
+              <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                Every believer is commissioned to make disciples and demonstrate Christ's ethical standards in government, business, education, and arts.
+              </p>
+            </div>
+          </div>
         </div>
-    </section>
-    <!-- Prayer & Connect Section -->
-    <section class="prayer-connect section section-alt">
-        <div class="container">
-            <div class="prayer-connect-content">
-                <div class="prayer-text">
-                    <h2>Need Prayer?</h2>
-                    <p>We believe in the power of prayer and would love to stand with you in faith. Submit your prayer request and our prayer team will intercede for you.</p>
-                </div>
-                <div class="prayer-actions">
-                    <a href="connect.html" class="btn btn-primary">Submit Prayer Request</a>
-                    <a href="connect.html" class="btn btn-outline">Contact Us</a>
-                </div>
+
+        <!-- Leadership & Ministry Team Structure -->
+        <div class="space-y-6">
+          <div class="text-center max-w-2xl mx-auto">
+            <span class="text-brand-gold-dark font-bold text-xs uppercase tracking-widest block mb-1">Servant Leadership</span>
+            <h2 class="text-3xl font-serif font-bold text-brand-navy">Fellowship Leadership & Care Team</h2>
+            <p class="text-xs sm:text-sm text-brand-charcoal-muted mt-1">
+              Under shepherd leadership accountable to the Word of God and devoted to serving the flock.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl border border-brand-ivory-dark shadow-card text-center">
+              <div class="w-20 h-20 rounded-full bg-brand-navy/10 mx-auto flex items-center justify-center text-brand-navy mb-4">
+                <i data-lucide="user-check" class="w-10 h-10 text-brand-gold-dark"></i>
+              </div>
+              <h4 class="font-serif font-bold text-brand-navy text-lg">Pastoral Oversight</h4>
+              <p class="text-xs text-brand-gold-dark font-semibold uppercase tracking-wider mb-2">Spiritual & Doctrinal Direction</p>
+              <p class="text-xs text-brand-charcoal-muted">
+                Guiding the flock with sound biblical preaching, vision alignment, and spiritual shepherding.
+              </p>
             </div>
+
+            <div class="bg-white p-6 rounded-xl border border-brand-ivory-dark shadow-card text-center">
+              <div class="w-20 h-20 rounded-full bg-brand-navy/10 mx-auto flex items-center justify-center text-brand-navy mb-4">
+                <i data-lucide="layers" class="w-10 h-10 text-brand-gold-dark"></i>
+              </div>
+              <h4 class="font-serif font-bold text-brand-navy text-lg">Pillar Coordinators</h4>
+              <p class="text-xs text-brand-gold-dark font-semibold uppercase tracking-wider mb-2">Seven Pillars Leadership</p>
+              <p class="text-xs text-brand-charcoal-muted">
+                Dedicated leaders stewarding Family, Word, Worship, Care, Community Hooks, Missions, and Marketplace.
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl border border-brand-ivory-dark shadow-card text-center">
+              <div class="w-20 h-20 rounded-full bg-brand-navy/10 mx-auto flex items-center justify-center text-brand-navy mb-4">
+                <i data-lucide="shield" class="w-10 h-10 text-brand-gold-dark"></i>
+              </div>
+              <h4 class="font-serif font-bold text-brand-navy text-lg">Pastoral Care & Prayer</h4>
+              <p class="text-xs text-brand-gold-dark font-semibold uppercase tracking-wider mb-2">Confidential Intercessors</p>
+              <p class="text-xs text-brand-charcoal-muted">
+                Vetted intercessors maintaining strict confidentiality for prayer requests and counselling needs.
+              </p>
+            </div>
+          </div>
         </div>
+
+        <!-- Approach to Digital Ministry -->
+        <div class="bg-brand-navy text-brand-ivory p-8 rounded-2xl border border-brand-gold/30">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div class="md:col-span-8 space-y-2">
+              <h3 class="font-serif text-2xl font-bold text-brand-ivory">Our Approach to Digital & In-Person Ministry</h3>
+              <p class="text-xs sm:text-sm text-brand-ivory/80 leading-relaxed">
+                We believe digital ministry is not a replacement for local fellowship, but an open digital front door. Through online broadcasts, WhatsApp community hooks, and digital discipleship resources, we invite seekers into tangible, relational, and life-giving community.
+              </p>
+            </div>
+            <div class="md:col-span-4 flex justify-start md:justify-end">
+              <button onclick="navigateTo('community')" class="px-6 py-3 rounded-md bg-brand-gold text-brand-navy font-semibold text-xs hover:bg-brand-gold-light transition-all shadow-gold">
+                Join Online Fellowship
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="assets/kristo-logo.svg" alt="Kristo Fellowship" class="footer-logo">
-                    <p class="footer-tagline">Professing God's Love • Advancing His Kingdom • Empowering Change Agents.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="pillars.html">Our Pillars</a></li>
-                        <li><a href="messages.html">Messages &amp; Resources</a></li>
-                        <li><a href="community.html">Community</a></li>
-                        <li><a href="connect.html">Connect</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="connect.html">Contact Us</a></li>
-                        <li><a href="connect.html">Prayer Requests</a></li>
-                        <li><a href="#">Social Media</a></li>
-                        <li><a href="#">Giving</a></li>
-                        <li><a href="connect.html">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p><strong>Email:</strong> info@kristofellowship.org</p>
-                    <p><strong>Phone/WhatsApp:</strong> 0787078448</p>
-                    <p><strong>Location:</strong> Kampala, Uganda</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"></a>
-                        <a href="#" aria-label="Instagram"></a>
-                        <a href="#" aria-label="YouTube"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> Kristo Fellowship. All rights reserved.</p>
-            </div>
+    <!-- ========================================== -->
+    <!-- 3. OUR PILLARS VIEW (view-pillars) -->
+    <!-- ========================================== -->
+    <section id="view-pillars" class="view-section">
+      <div class="bg-brand-navy text-brand-ivory py-16 sm:py-20 border-b border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+          <span class="text-brand-gold text-xs font-bold uppercase tracking-widest block">Holistic Spiritual Framework</span>
+          <h1 class="text-4xl sm:text-5xl font-serif font-bold text-brand-ivory">The Seven Pillars</h1>
+          <p class="text-sm sm:text-base text-brand-ivory/80 max-w-2xl mx-auto">
+            A comprehensive blueprint for personal discipleship, flourishing families, thriving community, and ethical cultural transformation.
+          </p>
         </div>
-    </footer>
+      </div>
 
-    <script src="js/script.js"></script>
+      <!-- Pillars Detail Container -->
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
+
+        <!-- 1. FAMILY PILLAR -->
+        <div id="pillar-family" class="bg-white rounded-2xl p-8 border border-brand-ivory-dark shadow-card transition-all">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-brand-ivory-dark">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl bg-brand-navy text-brand-gold flex items-center justify-center">
+                <i data-lucide="users" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-dark">Pillar 1</span>
+                <h2 class="text-2xl font-serif font-bold text-brand-navy">Family</h2>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-navy/5 text-brand-navy border border-brand-navy/10">Intergenerational Fellowship</span>
+          </div>
+          <div class="py-6 space-y-4">
+            <p class="text-sm sm:text-base text-brand-charcoal-light leading-relaxed">
+              Strengthening families through biblical principles, authentic relationships, and intentional intergenerational fellowship. We believe that strong, Christ-anchored families form the foundation of a healthy church and flourishing society.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+              <div class="bg-brand-ivory/50 p-4 rounded-xl border border-brand-ivory-dark">
+                <h4 class="font-serif font-bold text-brand-navy text-sm mb-1 flex items-center gap-1.5">
+                  <i data-lucide="sprout" class="w-4 h-4 text-brand-gold-dark"></i> Vines (Children)
+                </h4>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                  Age-appropriate Scripture memory, joyful worship, and loving discipleship where young hearts encounter Jesus.
+                </p>
+              </div>
+
+              <div class="bg-brand-ivory/50 p-4 rounded-xl border border-brand-ivory-dark">
+                <h4 class="font-serif font-bold text-brand-navy text-sm mb-1 flex items-center gap-1.5">
+                  <i data-lucide="sparkle" class="w-4 h-4 text-brand-gold-dark"></i> Youth Ministry
+                </h4>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                  Equipping teens and young adults with unshakeable biblical worldview, peer mentorship, and leadership skills.
+                </p>
+              </div>
+
+              <div class="bg-brand-ivory/50 p-4 rounded-xl border border-brand-ivory-dark">
+                <h4 class="font-serif font-bold text-brand-navy text-sm mb-1 flex items-center gap-1.5">
+                  <i data-lucide="heart-handshake" class="w-4 h-4 text-brand-gold-dark"></i> Couples (Married & Courting)
+                </h4>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                  Premarital preparation, marriage roundtables, covenant accountability, and communication enrichment.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-brand-ivory-dark flex justify-between items-center text-xs">
+            <span class="text-brand-charcoal-muted">Ministries: Vines, Youth, Couples</span>
+            <button onclick="navigateTo('community')" class="font-semibold text-brand-navy hover:text-brand-gold flex items-center gap-1">Connect with Family Groups →</button>
+          </div>
+        </div>
+
+        <!-- 2. WORD PILLAR -->
+        <div id="pillar-word" class="bg-white rounded-2xl p-8 border border-brand-ivory-dark shadow-card transition-all">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-brand-ivory-dark">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl bg-brand-navy text-brand-gold flex items-center justify-center">
+                <i data-lucide="book-open" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-dark">Pillar 2</span>
+                <h2 class="text-2xl font-serif font-bold text-brand-navy">Word</h2>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-navy/5 text-brand-navy border border-brand-navy/10">Biblical Teaching & Discipleship</span>
+          </div>
+          <div class="py-6 space-y-4">
+            <p class="text-sm sm:text-base text-brand-charcoal-light leading-relaxed">
+              Grounding every believer in the unshakeable foundation of God's Word through systematic exposition, Bible study cohorts, and structured discipleship pathways.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-brand-ivory/50 p-4 rounded-xl border border-brand-ivory-dark">
+                <h4 class="font-serif font-bold text-brand-navy text-sm mb-1">Expository Teaching</h4>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed">Verse-by-verse scriptural illumination that bridges ancient context with modern practical application.</p>
+              </div>
+              <div class="bg-brand-ivory/50 p-4 rounded-xl border border-brand-ivory-dark">
+                <h4 class="font-serif font-bold text-brand-navy text-sm mb-1">Personal Discipleship</h4>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed">Equipping believers to study, interpret, and teach God's Word with confidence and theological precision.</p>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-brand-ivory-dark flex justify-between items-center text-xs">
+            <span class="text-brand-charcoal-muted">Resources: Sermon Library, Bible Reading Plans</span>
+            <button onclick="navigateTo('messages')" class="font-semibold text-brand-navy hover:text-brand-gold flex items-center gap-1">Browse Word Teachings →</button>
+          </div>
+        </div>
+
+        <!-- 3. WORSHIP PILLAR -->
+        <div id="pillar-worship" class="bg-white rounded-2xl p-8 border border-brand-ivory-dark shadow-card transition-all">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-brand-ivory-dark">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl bg-brand-navy text-brand-gold flex items-center justify-center">
+                <i data-lucide="flame" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-dark">Pillar 3</span>
+                <h2 class="text-2xl font-serif font-bold text-brand-navy">Worship</h2>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-navy/5 text-brand-navy border border-brand-navy/10">Intimacy with God</span>
+          </div>
+          <div class="py-6 space-y-4">
+            <p class="text-sm sm:text-base text-brand-charcoal-light leading-relaxed">
+              Building an authentic lifestyle of worship, intercessory prayer, and reverent communion with the Holy Spirit—transforming worship from a musical event into an everyday sacrifice of praise.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-brand-ivory/50 p-4 rounded-xl border border-brand-ivory-dark">
+                <h4 class="font-serif font-bold text-brand-navy text-sm mb-1">Prayer Altars</h4>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed">Weekly corporate intercession, dawn prayer watches, and personal altar cultivation.</p>
+              </div>
+              <div class="bg-brand-ivory/50 p-4 rounded-xl border border-brand-ivory-dark">
+                <h4 class="font-serif font-bold text-brand-navy text-sm mb-1">Spirit & Truth Worship</h4>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed">Christ-exalting praise and worship that invites the transformative presence of God.</p>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-brand-ivory-dark flex justify-between items-center text-xs">
+            <span class="text-brand-charcoal-muted">Focus: Corporate Worship, Prayer Altars</span>
+            <button onclick="navigateTo('connect', 'tab-volunteer')" class="font-semibold text-brand-navy hover:text-brand-gold flex items-center gap-1">Join Worship Team →</button>
+          </div>
+        </div>
+
+        <!-- 4. CARE PILLAR -->
+        <div id="pillar-care" class="bg-white rounded-2xl p-8 border border-brand-ivory-dark shadow-card transition-all">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-brand-ivory-dark">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl bg-brand-navy text-brand-gold flex items-center justify-center">
+                <i data-lucide="shield" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-dark">Pillar 4</span>
+                <h2 class="text-2xl font-serif font-bold text-brand-navy">Care</h2>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-forest/10 text-brand-forest border border-brand-forest/20">Confidential & Compassionate</span>
+          </div>
+          <div class="py-6 space-y-4">
+            <p class="text-sm sm:text-base text-brand-charcoal-light leading-relaxed">
+              Supporting individuals and families through biblically sound counselling, compassionate relief, grief care, and steadfast prayer support. We treat every vulnerable request with the highest degree of confidentiality.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-brand-ivory/50 p-4 rounded-xl border border-brand-ivory-dark">
+                <h4 class="font-serif font-bold text-brand-navy text-sm mb-1">Confidential Pastoral Counselling</h4>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed">Guided sessions for marriage restoration, grief, spiritual confusion, and crisis care.</p>
+              </div>
+              <div class="bg-brand-ivory/50 p-4 rounded-xl border border-brand-ivory-dark">
+                <h4 class="font-serif font-bold text-brand-navy text-sm mb-1">Practical Benevolence</h4>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed">Extending the love of Christ in tangible ways to members experiencing sudden hardship or loss.</p>
+              </div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-brand-ivory-dark flex justify-between items-center text-xs">
+            <span class="text-brand-charcoal-muted">Access: Protected pastoral routing</span>
+            <button onclick="navigateTo('connect', 'tab-counsel')" class="font-semibold text-brand-navy hover:text-brand-gold flex items-center gap-1">Request Private Support →</button>
+          </div>
+        </div>
+
+        <!-- 5. COMMUNITY PILLAR -->
+        <div id="pillar-community" class="bg-white rounded-2xl p-8 border border-brand-ivory-dark shadow-card transition-all">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-brand-ivory-dark">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl bg-brand-navy text-brand-gold flex items-center justify-center">
+                <i data-lucide="home" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-dark">Pillar 5</span>
+                <h2 class="text-2xl font-serif font-bold text-brand-navy">Community</h2>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-navy/5 text-brand-navy border border-brand-navy/10">House Fellowships (Hooks)</span>
+          </div>
+          <div class="py-6 space-y-4">
+            <p class="text-sm sm:text-base text-brand-charcoal-light leading-relaxed">
+              Building genuine relationships through shared meals, vulnerability, and neighborhood house fellowships called <strong>Hooks</strong>—where no one walks alone.
+            </p>
+            <div class="bg-brand-ivory/50 p-4 rounded-xl border border-brand-ivory-dark">
+              <h4 class="font-serif font-bold text-brand-navy text-sm mb-1">What is a Community Hook?</h4>
+              <p class="text-xs text-brand-charcoal-muted leading-relaxed">
+                Modeled after Acts 2:46, Hooks are intimate small groups meeting weekly in homes across neighborhoods. They provide a safe space to share life, study the Word, care for one another, and reach neighbors.
+              </p>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-brand-ivory-dark flex justify-between items-center text-xs">
+            <span class="text-brand-charcoal-muted">Available in multiple neighborhood clusters</span>
+            <button onclick="navigateTo('community')" class="font-semibold text-brand-navy hover:text-brand-gold flex items-center gap-1">Find a Hook Near You →</button>
+          </div>
+        </div>
+
+        <!-- 6. MISSIONS PILLAR -->
+        <div id="pillar-missions" class="bg-white rounded-2xl p-8 border border-brand-ivory-dark shadow-card transition-all">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-brand-ivory-dark">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl bg-brand-navy text-brand-gold flex items-center justify-center">
+                <i data-lucide="globe" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-dark">Pillar 6</span>
+                <h2 class="text-2xl font-serif font-bold text-brand-navy">Missions</h2>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-navy/5 text-brand-navy border border-brand-navy/10">Evangelism & Outreach</span>
+          </div>
+          <div class="py-6 space-y-4">
+            <p class="text-sm sm:text-base text-brand-charcoal-light leading-relaxed">
+              Taking the Gospel beyond the walls of church buildings through compassionate community outreach, medical camps, school visitations, and creative digital evangelism.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-brand-ivory-dark flex justify-between items-center text-xs">
+            <span class="text-brand-charcoal-muted">Local & Digital Outreach</span>
+            <button onclick="navigateTo('connect', 'tab-volunteer')" class="font-semibold text-brand-navy hover:text-brand-gold flex items-center gap-1">Volunteer for Missions →</button>
+          </div>
+        </div>
+
+        <!-- 7. MARKETPLACE PILLAR -->
+        <div id="pillar-marketplace" class="bg-white rounded-2xl p-8 border border-brand-ivory-dark shadow-card transition-all">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-brand-ivory-dark">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl bg-brand-navy text-brand-gold flex items-center justify-center">
+                <i data-lucide="briefcase" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-gold-dark">Pillar 7</span>
+                <h2 class="text-2xl font-serif font-bold text-brand-navy">Marketplace</h2>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-navy/5 text-brand-navy border border-brand-navy/10">Faith in the Workplace</span>
+          </div>
+          <div class="py-6 space-y-4">
+            <p class="text-sm sm:text-base text-brand-charcoal-light leading-relaxed">
+              Equipping believers to understand their professional vocations as sacred callings. We train men and women to conduct business with unyielding integrity, lead with servant humility, and become transformational change agents in governance, enterprise, and education.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-brand-ivory-dark flex justify-between items-center text-xs">
+            <span class="text-brand-charcoal-muted">Focus: Professional Ethics & Cultural Influence</span>
+            <button onclick="navigateTo('connect', 'tab-join')" class="font-semibold text-brand-navy hover:text-brand-gold flex items-center gap-1">Join Marketplace Guild →</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 4. MESSAGES & RESOURCES VIEW (view-messages) -->
+    <!-- ========================================== -->
+    <section id="view-messages" class="view-section">
+      <div class="bg-brand-navy text-brand-ivory py-16 sm:py-20 border-b border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+          <span class="text-brand-gold text-xs font-bold uppercase tracking-widest block">Discipleship & Teachings</span>
+          <h1 class="text-4xl sm:text-5xl font-serif font-bold text-brand-ivory">Messages & Resources</h1>
+          <p class="text-sm sm:text-base text-brand-ivory/80 max-w-2xl mx-auto">
+            Explore sermons, Bible study outlines, devotionals, and video teachings to feed your spirit throughout the week.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Interactive Filter & Search Bar -->
+        <div class="bg-white p-6 rounded-2xl border border-brand-ivory-dark shadow-card mb-10 space-y-4">
+          <div class="flex flex-col md:flex-row items-center gap-4">
+            <!-- Search input -->
+            <div class="relative w-full md:flex-1">
+              <i data-lucide="search" class="w-4 h-4 text-brand-charcoal-muted absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+              <input type="text" id="messages-search" oninput="filterMessages()" placeholder="Search teachings by title, scripture or topic..." class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/40 text-sm focus:outline-none focus:border-brand-gold focus:bg-white transition-colors">
+            </div>
+
+            <!-- Topic / Pillar Filter -->
+            <div class="w-full md:w-auto">
+              <select id="messages-topic" onchange="filterMessages()" class="w-full py-2.5 px-3 rounded-lg border border-brand-ivory-dark bg-brand-ivory/40 text-sm focus:outline-none focus:border-brand-gold">
+                <option value="all">All Pillars & Topics</option>
+                <option value="Word">Word & Doctrine</option>
+                <option value="Family">Family & Relationships</option>
+                <option value="Marketplace">Marketplace Faith</option>
+                <option value="Worship">Worship & Prayer</option>
+                <option value="Community">Community & Care</option>
+              </select>
+            </div>
+
+            <!-- Format Filter -->
+            <div class="w-full md:w-auto">
+              <select id="messages-format" onchange="filterMessages()" class="w-full py-2.5 px-3 rounded-lg border border-brand-ivory-dark bg-brand-ivory/40 text-sm focus:outline-none focus:border-brand-gold">
+                <option value="all">All Formats</option>
+                <option value="video">Video Teaching</option>
+                <option value="audio">Audio / Sermon</option>
+                <option value="notes">Study Notes / Article</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Active filters count -->
+          <div class="flex items-center justify-between text-xs text-brand-charcoal-muted pt-2 border-t border-brand-ivory-dark">
+            <span id="messages-count">Showing 6 resources</span>
+            <span class="text-brand-gold-dark font-medium">YouTube embeds enabled for MVP</span>
+          </div>
+        </div>
+
+        <!-- Messages Grid -->
+        <div id="messages-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1 -->
+          <div class="message-card bg-white rounded-xl overflow-hidden border border-brand-ivory-dark shadow-card hover:shadow-card-hover transition-all flex flex-col justify-between" data-topic="Marketplace" data-format="video">
+            <div>
+              <div class="relative aspect-video bg-brand-navy cursor-pointer group" onclick="playVideo('dQw4w9WgXcQ', 'Empowering Change Agents in the Marketplace', 'Pastor David & Leadership')">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=700&q=80" alt="Marketplace Faith" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-80">
+                <div class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/20 flex items-center justify-center transition-colors">
+                  <div class="w-12 h-12 rounded-full bg-brand-gold text-brand-navy flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform">
+                    <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                  </div>
+                </div>
+                <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[10px] font-semibold bg-brand-navy/90 text-brand-gold uppercase">Video Teaching</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between text-xs text-brand-charcoal-muted mb-2">
+                  <span class="font-medium text-brand-gold-dark">Marketplace Pillar</span>
+                  <span>42 mins</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-brand-navy mb-2 line-clamp-2">
+                  Empowering Change Agents: Living Out Faith in the Workplace
+                </h3>
+                <p class="text-xs text-brand-charcoal-light leading-relaxed line-clamp-3 mb-4">
+                  How believers can overcome workplace compromise, cultivate excellence, and become ethical change agents in secular industries.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-3 border-t border-brand-ivory-dark flex items-center justify-between text-xs">
+              <span class="text-brand-charcoal-muted font-medium">Speaker: Pastor David</span>
+              <button onclick="playVideo('dQw4w9WgXcQ', 'Empowering Change Agents in the Marketplace', 'Pastor David & Leadership')" class="font-semibold text-brand-gold-dark hover:underline flex items-center gap-1">
+                <i data-lucide="play" class="w-3.5 h-3.5"></i> Watch
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="message-card bg-white rounded-xl overflow-hidden border border-brand-ivory-dark shadow-card hover:shadow-card-hover transition-all flex flex-col justify-between" data-topic="Family" data-format="video">
+            <div>
+              <div class="relative aspect-video bg-brand-navy cursor-pointer group" onclick="playVideo('L_LUpnjgPso', 'Building Resilient, Christ-Anchored Families', 'Family Life Ministry')">
+                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=700&q=80" alt="Family Teaching" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-80">
+                <div class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/20 flex items-center justify-center transition-colors">
+                  <div class="w-12 h-12 rounded-full bg-brand-gold text-brand-navy flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform">
+                    <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                  </div>
+                </div>
+                <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[10px] font-semibold bg-brand-navy/90 text-brand-gold uppercase">Video Teaching</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between text-xs text-brand-charcoal-muted mb-2">
+                  <span class="font-medium text-brand-gold-dark">Family Pillar</span>
+                  <span>38 mins</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-brand-navy mb-2 line-clamp-2">
+                  Building Resilient, Christ-Anchored Families in a Distracted World
+                </h3>
+                <p class="text-xs text-brand-charcoal-light leading-relaxed line-clamp-3 mb-4">
+                  Practical guidelines for godly parenting, intentional communication between spouses, and raising children who love the Lord.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-3 border-t border-brand-ivory-dark flex items-center justify-between text-xs">
+              <span class="text-brand-charcoal-muted font-medium">Speaker: Couples & Family Ministry</span>
+              <button onclick="playVideo('L_LUpnjgPso', 'Building Resilient, Christ-Anchored Families', 'Family Life Ministry')" class="font-semibold text-brand-gold-dark hover:underline flex items-center gap-1">
+                <i data-lucide="play" class="w-3.5 h-3.5"></i> Watch
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="message-card bg-white rounded-xl overflow-hidden border border-brand-ivory-dark shadow-card hover:shadow-card-hover transition-all flex flex-col justify-between" data-topic="Word" data-format="notes">
+            <div>
+              <div class="relative aspect-video bg-brand-navy-light flex items-center justify-center p-6 border-b border-brand-ivory-dark">
+                <div class="text-center space-y-2">
+                  <div class="w-12 h-12 rounded-full bg-white/10 text-brand-gold mx-auto flex items-center justify-center">
+                    <i data-lucide="file-text" class="w-6 h-6"></i>
+                  </div>
+                  <span class="text-xs text-brand-ivory font-serif tracking-wide block">Bible Study Guide</span>
+                </div>
+                <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[10px] font-semibold bg-brand-navy/90 text-brand-gold uppercase">Study Notes</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between text-xs text-brand-charcoal-muted mb-2">
+                  <span class="font-medium text-brand-gold-dark">Word Pillar</span>
+                  <span>PDF & Outline</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-brand-navy mb-2 line-clamp-2">
+                  The Doctrine of Grace: Understanding Romans 8
+                </h3>
+                <p class="text-xs text-brand-charcoal-light leading-relaxed line-clamp-3 mb-4">
+                  A comprehensive verse-by-verse study guide exploring life in the Spirit, eternal security, and God's sovereign redemption plan.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-3 border-t border-brand-ivory-dark flex items-center justify-between text-xs">
+              <span class="text-brand-charcoal-muted font-medium">Author: Discipleship Team</span>
+              <button onclick="downloadStudyNotes('Doctrine of Grace - Romans 8 Study Guide')" class="font-semibold text-brand-navy hover:text-brand-gold flex items-center gap-1">
+                <i data-lucide="download" class="w-3.5 h-3.5 text-brand-gold-dark"></i> Download Notes
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="message-card bg-white rounded-xl overflow-hidden border border-brand-ivory-dark shadow-card hover:shadow-card-hover transition-all flex flex-col justify-between" data-topic="Worship" data-format="video">
+            <div>
+              <div class="relative aspect-video bg-brand-navy cursor-pointer group" onclick="playVideo('f2oxGYPUlnA', 'Building Intimacy with God: Prayer Altars', 'Worship & Prayer Team')">
+                <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=700&q=80" alt="Worship Altar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-80">
+                <div class="absolute inset-0 bg-brand-navy/40 group-hover:bg-brand-navy/20 flex items-center justify-center transition-colors">
+                  <div class="w-12 h-12 rounded-full bg-brand-gold text-brand-navy flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform">
+                    <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                  </div>
+                </div>
+                <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[10px] font-semibold bg-brand-navy/90 text-brand-gold uppercase">Video Teaching</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between text-xs text-brand-charcoal-muted mb-2">
+                  <span class="font-medium text-brand-gold-dark">Worship Pillar</span>
+                  <span>45 mins</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-brand-navy mb-2 line-clamp-2">
+                  Building Intimacy with God: Raising Personal Prayer Altars
+                </h3>
+                <p class="text-xs text-brand-charcoal-light leading-relaxed line-clamp-3 mb-4">
+                  Rediscovering the power of quiet meditation, spontaneous thanksgiving, and intercession that shifts atmospheres.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-3 border-t border-brand-ivory-dark flex items-center justify-between text-xs">
+              <span class="text-brand-charcoal-muted font-medium">Speaker: Prayer Ministry</span>
+              <button onclick="playVideo('f2oxGYPUlnA', 'Building Intimacy with God: Prayer Altars', 'Worship & Prayer Team')" class="font-semibold text-brand-gold-dark hover:underline flex items-center gap-1">
+                <i data-lucide="play" class="w-3.5 h-3.5"></i> Watch
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="message-card bg-white rounded-xl overflow-hidden border border-brand-ivory-dark shadow-card hover:shadow-card-hover transition-all flex flex-col justify-between" data-topic="Community" data-format="audio">
+            <div>
+              <div class="relative aspect-video bg-brand-forest-dark flex items-center justify-center p-6 border-b border-brand-ivory-dark">
+                <div class="text-center space-y-2">
+                  <div class="w-12 h-12 rounded-full bg-brand-gold/20 text-brand-gold mx-auto flex items-center justify-center">
+                    <i data-lucide="mic" class="w-6 h-6"></i>
+                  </div>
+                  <span class="text-xs text-brand-ivory font-serif tracking-wide block">Audio Podcast / Exhortation</span>
+                </div>
+                <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[10px] font-semibold bg-brand-navy/90 text-brand-gold uppercase">Audio Teaching</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between text-xs text-brand-charcoal-muted mb-2">
+                  <span class="font-medium text-brand-gold-dark">Community Pillar</span>
+                  <span>24 mins</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-brand-navy mb-2 line-clamp-2">
+                  The Power of Fellowship: Breaking Bread in Modern Times
+                </h3>
+                <p class="text-xs text-brand-charcoal-light leading-relaxed line-clamp-3 mb-4">
+                  Why small group accountability and hospitality remain the deepest antidote to 21st-century loneliness and spiritual drift.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-3 border-t border-brand-ivory-dark flex items-center justify-between text-xs">
+              <span class="text-brand-charcoal-muted font-medium">Speaker: Community Hooks Lead</span>
+              <button onclick="playAudioMessage('The Power of Fellowship: Breaking Bread in Modern Times')" class="font-semibold text-brand-navy hover:text-brand-gold flex items-center gap-1">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5 text-brand-gold-dark"></i> Listen Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="message-card bg-white rounded-xl overflow-hidden border border-brand-ivory-dark shadow-card hover:shadow-card-hover transition-all flex flex-col justify-between" data-topic="Word" data-format="notes">
+            <div>
+              <div class="relative aspect-video bg-brand-navy-light flex items-center justify-center p-6 border-b border-brand-ivory-dark">
+                <div class="text-center space-y-2">
+                  <div class="w-12 h-12 rounded-full bg-white/10 text-brand-gold mx-auto flex items-center justify-center">
+                    <i data-lucide="book" class="w-6 h-6"></i>
+                  </div>
+                  <span class="text-xs text-brand-ivory font-serif tracking-wide block">Weekly Devotional Article</span>
+                </div>
+                <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[10px] font-semibold bg-brand-navy/90 text-brand-gold uppercase">Article</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between text-xs text-brand-charcoal-muted mb-2">
+                  <span class="font-medium text-brand-gold-dark">Word Pillar</span>
+                  <span>7 min read</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-brand-navy mb-2 line-clamp-2">
+                  Advancing the Kingdom in Silence: The Quiet Work of Faith
+                </h3>
+                <p class="text-xs text-brand-charcoal-light leading-relaxed line-clamp-3 mb-4">
+                  Reflections on faithfulness when prayers seem unanswered and the fruit of obedience takes seasons to ripen.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-3 border-t border-brand-ivory-dark flex items-center justify-between text-xs">
+              <span class="text-brand-charcoal-muted font-medium">Author: Pastoral Reflections</span>
+              <button onclick="downloadStudyNotes('Advancing the Kingdom in Silence - Devotional Article')" class="font-semibold text-brand-navy hover:text-brand-gold flex items-center gap-1">
+                <i data-lucide="file-text" class="w-3.5 h-3.5 text-brand-gold-dark"></i> Read Article
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. COMMUNITY VIEW (view-community) -->
+    <!-- ========================================== -->
+    <section id="view-community" class="view-section">
+      <div class="bg-brand-navy text-brand-ivory py-16 sm:py-20 border-b border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+          <span class="text-brand-gold text-xs font-bold uppercase tracking-widest block">Authentic Relationship</span>
+          <h1 class="text-4xl sm:text-5xl font-serif font-bold text-brand-ivory">Kristo Community & Hooks</h1>
+          <p class="text-sm sm:text-base text-brand-ivory/80 max-w-2xl mx-auto">
+            You don't just attend Kristo Fellowship—you belong here. Connect through family groups, local home house fellowships, and online community circles.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+        
+        <!-- SECTION 1: FAMILY COMMUNITIES -->
+        <div class="space-y-6">
+          <div class="text-center max-w-2xl mx-auto">
+            <span class="text-brand-gold-dark font-bold text-xs uppercase tracking-widest block mb-1">Family Communities</span>
+            <h2 class="text-3xl font-serif font-bold text-brand-navy">Discipleship for Every Stage of Life</h2>
+            <p class="text-xs sm:text-sm text-brand-charcoal-muted mt-1">Strengthening bonds between generations</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Vines -->
+            <div class="bg-white rounded-xl p-6 border border-brand-ivory-dark shadow-card flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-green-50 text-green-700 flex items-center justify-center mb-4">
+                  <i data-lucide="sprout" class="w-6 h-6"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-brand-navy mb-1">Vines</h3>
+                <p class="text-xs text-brand-gold-dark font-semibold uppercase mb-3">Children's Ministry (Ages 3–12)</p>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed mb-4">
+                  Nurturing seeds of biblical truth, joyful worship, creative crafts, and Scripture memorization led by vetted, loving teachers.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-brand-ivory-dark">
+                <button onclick="openWhatsAppModal('Vines Children Ministry Parents Circle')" class="w-full py-2 px-3 rounded-lg bg-green-600 text-white font-semibold text-xs flex items-center justify-center gap-1.5 hover:bg-green-700 transition-colors shadow">
+                  <i data-lucide="message-circle" class="w-4 h-4"></i> Join Vines Parents Group
+                </button>
+              </div>
+            </div>
+
+            <!-- Youth -->
+            <div class="bg-white rounded-xl p-6 border border-brand-ivory-dark shadow-card flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-blue-50 text-brand-navy flex items-center justify-center mb-4">
+                  <i data-lucide="zap" class="w-6 h-6 text-brand-gold-dark"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-brand-navy mb-1">Youth Fellowship</h3>
+                <p class="text-xs text-brand-gold-dark font-semibold uppercase mb-3">Next-Gen Leaders (Ages 13–25)</p>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed mb-4">
+                  Dynamic discussions tackling real-world pressures, faith doubts, career preparation, and discovering God's unique destiny.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-brand-ivory-dark">
+                <button onclick="openWhatsAppModal('Kristo Youth Fellowship')" class="w-full py-2 px-3 rounded-lg bg-green-600 text-white font-semibold text-xs flex items-center justify-center gap-1.5 hover:bg-green-700 transition-colors shadow">
+                  <i data-lucide="message-circle" class="w-4 h-4"></i> Join Youth WhatsApp
+                </button>
+              </div>
+            </div>
+
+            <!-- Couples -->
+            <div class="bg-white rounded-xl p-6 border border-brand-ivory-dark shadow-card flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center mb-4">
+                  <i data-lucide="heart" class="w-6 h-6 text-brand-gold-dark"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-brand-navy mb-1">Couples Guild</h3>
+                <p class="text-xs text-brand-gold-dark font-semibold uppercase mb-3">Married & Courting</p>
+                <p class="text-xs text-brand-charcoal-muted leading-relaxed mb-4">
+                  Building generational marriage foundations, transparent peer mentorship, date nights, and godly parenting coaching.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-brand-ivory-dark">
+                <button onclick="openWhatsAppModal('Kristo Couples & Marriage Network')" class="w-full py-2 px-3 rounded-lg bg-green-600 text-white font-semibold text-xs flex items-center justify-center gap-1.5 hover:bg-green-700 transition-colors shadow">
+                  <i data-lucide="message-circle" class="w-4 h-4"></i> Join Couples WhatsApp
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: COMMUNITY HOOKS (HOUSE FELLOWSHIPS) -->
+        <div class="bg-white p-8 sm:p-12 rounded-2xl border border-brand-ivory-dark shadow-card space-y-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+              <span class="text-brand-gold-dark font-bold text-xs uppercase tracking-widest block mb-1">Local Small Groups</span>
+              <h2 class="text-3xl font-serif font-bold text-brand-navy">Community Hooks (Home Fellowships)</h2>
+              <p class="text-xs sm:text-sm text-brand-charcoal-muted mt-1 max-w-xl">
+                Hooks are regional house churches meeting mid-week for authentic food, deep Bible study, and intentional mutual care.
+              </p>
+            </div>
+            <button onclick="navigateTo('connect', 'tab-join')" class="px-5 py-2.5 rounded-lg bg-brand-navy text-brand-ivory font-semibold text-xs hover:bg-brand-navy-light transition-colors whitespace-nowrap">
+              Request to Host a Hook
+            </button>
+          </div>
+
+          <!-- Hook Cards Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-5 rounded-xl bg-brand-ivory/50 border border-brand-ivory-dark flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs mb-2">
+                  <span class="font-semibold text-brand-navy">Central Cluster</span>
+                  <span class="bg-brand-gold/20 text-brand-navy-dark px-2 py-0.5 rounded text-[10px] font-bold">Wed 6:30 PM</span>
+                </div>
+                <h4 class="font-serif font-bold text-brand-navy text-base mb-1">Central Haven Hook</h4>
+                <p class="text-xs text-brand-charcoal-muted mb-4">Focus on young professionals and young families in the metropolitan area.</p>
+              </div>
+              <button onclick="joinHook('Central Haven Hook', 'Pastor Samuel & Sarah')" class="text-xs font-semibold text-brand-gold-dark hover:underline flex items-center gap-1">
+                Join This Hook →
+              </button>
+            </div>
+
+            <div class="p-5 rounded-xl bg-brand-ivory/50 border border-brand-ivory-dark flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs mb-2">
+                  <span class="font-semibold text-brand-navy">North Cluster</span>
+                  <span class="bg-brand-gold/20 text-brand-navy-dark px-2 py-0.5 rounded text-[10px] font-bold">Thu 7:00 PM</span>
+                </div>
+                <h4 class="font-serif font-bold text-brand-navy text-base mb-1">Grace Hills Hook</h4>
+                <p class="text-xs text-brand-charcoal-muted mb-4">Intergenerational family fellowship with parallel kids' Bible story time.</p>
+              </div>
+              <button onclick="joinHook('Grace Hills Hook', 'Elder John & Mary')" class="text-xs font-semibold text-brand-gold-dark hover:underline flex items-center gap-1">
+                Join This Hook →
+              </button>
+            </div>
+
+            <div class="p-5 rounded-xl bg-brand-ivory/50 border border-brand-ivory-dark flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs mb-2">
+                  <span class="font-semibold text-brand-navy">West Cluster</span>
+                  <span class="bg-brand-gold/20 text-brand-navy-dark px-2 py-0.5 rounded text-[10px] font-bold">Tue 6:45 PM</span>
+                </div>
+                <h4 class="font-serif font-bold text-brand-navy text-base mb-1">Shalom Horizon Hook</h4>
+                <p class="text-xs text-brand-charcoal-muted mb-4">Marketplace professionals, business owners, and career discipleship.</p>
+              </div>
+              <button onclick="joinHook('Shalom Horizon Hook', 'Deacon Michael & Ruth')" class="text-xs font-semibold text-brand-gold-dark hover:underline flex items-center gap-1">
+                Join This Hook →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: ONLINE FELLOWSHIP & BROADCASTS -->
+        <div class="bg-brand-navy text-brand-ivory p-8 sm:p-10 rounded-2xl border border-brand-gold/30">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-8 space-y-3">
+              <span class="text-brand-gold text-xs font-bold uppercase tracking-wider">Borderless Digital Ministry</span>
+              <h3 class="text-2xl sm:text-3xl font-serif font-bold text-brand-ivory">Online Fellowship & Mid-Week Prayer</h3>
+              <p class="text-xs sm:text-sm text-brand-ivory/80 leading-relaxed">
+                Unable to attend physically or located in another city? Join our digital community via live broadcast, online prayer rooms, and digital discussion boards every Tuesday and Sunday.
+              </p>
+              <div class="pt-2 flex flex-wrap gap-4 text-xs">
+                <span class="flex items-center gap-1.5"><i data-lucide="video" class="w-4 h-4 text-brand-gold"></i> Sunday 10:00 AM Live</span>
+                <span class="flex items-center gap-1.5"><i data-lucide="message-square" class="w-4 h-4 text-brand-gold"></i> Tuesday 8:00 PM Online Prayer</span>
+              </div>
+            </div>
+            <div class="md:col-span-4 flex flex-col gap-3 justify-center">
+              <button onclick="openYouTubeStream()" class="w-full py-3 px-4 rounded-lg bg-red-600 text-white font-semibold text-xs flex items-center justify-center gap-2 hover:bg-red-700 transition-colors shadow">
+                <i data-lucide="youtube" class="w-4 h-4"></i> Watch YouTube Broadcast
+              </button>
+              <button onclick="openWhatsAppModal('Kristo Fellowship Global Digital Circle')" class="w-full py-3 px-4 rounded-lg bg-brand-gold text-brand-navy font-semibold text-xs flex items-center justify-center gap-2 hover:bg-brand-gold-light transition-colors shadow-gold">
+                <i data-lucide="users" class="w-4 h-4"></i> Join Online Community
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 6. CONNECT VIEW (view-connect) -->
+    <!-- ========================================== -->
+    <section id="view-connect" class="view-section">
+      <div class="bg-brand-navy text-brand-ivory py-16 sm:py-20 border-b border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+          <span class="text-brand-gold text-xs font-bold uppercase tracking-widest block">Reach Out & Get Involved</span>
+          <h1 class="text-4xl sm:text-5xl font-serif font-bold text-brand-ivory">Connect With Kristo</h1>
+          <p class="text-sm sm:text-base text-brand-ivory/80 max-w-2xl mx-auto">
+            Whether you are seeking private prayer support, desire pastoral counselling, want to join the fellowship, or feel called to volunteer—we are here for you.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        
+        <!-- Interactive Connect Navigation Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-10 border-b border-brand-ivory-dark pb-4">
+          <button onclick="switchConnectTab('tab-prayer')" id="tab-btn-prayer" class="connect-tab-btn px-4 py-2.5 rounded-lg text-xs font-semibold transition-all bg-brand-navy text-brand-gold shadow">
+            <i data-lucide="shield" class="w-3.5 h-3.5 inline mr-1 text-brand-gold"></i> Submit Prayer Request
+          </button>
+          <button onclick="switchConnectTab('tab-counsel')" id="tab-btn-counsel" class="connect-tab-btn px-4 py-2.5 rounded-lg text-xs font-semibold transition-all bg-white text-brand-charcoal hover:bg-brand-navy/5">
+            <i data-lucide="heart" class="w-3.5 h-3.5 inline mr-1 text-brand-forest"></i> Request Counselling
+          </button>
+          <button onclick="switchConnectTab('tab-join')" id="tab-btn-join" class="connect-tab-btn px-4 py-2.5 rounded-lg text-xs font-semibold transition-all bg-white text-brand-charcoal hover:bg-brand-navy/5">
+            <i data-lucide="user-plus" class="w-3.5 h-3.5 inline mr-1 text-brand-gold-dark"></i> Join Fellowship
+          </button>
+          <button onclick="switchConnectTab('tab-volunteer')" id="tab-btn-volunteer" class="connect-tab-btn px-4 py-2.5 rounded-lg text-xs font-semibold transition-all bg-white text-brand-charcoal hover:bg-brand-navy/5">
+            <i data-lucide="hand" class="w-3.5 h-3.5 inline mr-1 text-blue-600"></i> Volunteer to Serve
+          </button>
+          <button onclick="switchConnectTab('tab-contact')" id="tab-btn-contact" class="connect-tab-btn px-4 py-2.5 rounded-lg text-xs font-semibold transition-all bg-white text-brand-charcoal hover:bg-brand-navy/5">
+            <i data-lucide="mail" class="w-3.5 h-3.5 inline mr-1 text-brand-navy"></i> General Contact
+          </button>
+        </div>
+
+        <!-- TAB 1: PRAYER REQUEST (Confidential - PRD Section 6 & 9 Compliant) -->
+        <div id="tab-prayer" class="connect-panel">
+          <div class="bg-white rounded-2xl p-6 sm:p-10 border border-brand-ivory-dark shadow-card space-y-6">
+            <!-- Privacy & Security Guarantee Banner -->
+            <div class="bg-brand-forest/10 border border-brand-forest/30 rounded-xl p-4 flex items-start gap-3">
+              <i data-lucide="lock" class="w-5 h-5 text-brand-forest flex-shrink-0 mt-0.5"></i>
+              <div class="text-xs text-brand-charcoal-light leading-relaxed">
+                <strong class="text-brand-forest font-semibold block">Pastoral Confidentiality Guarantee</strong>
+                In strict accordance with our spiritual care charter (PRD Section 9), your prayer request is strictly private. It will never appear publicly and is only accessible by authorized intercessors.
+              </div>
+            </div>
+
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-brand-navy">Submit a Prayer Request</h3>
+              <p class="text-xs text-brand-charcoal-muted mt-1">Let us lift your burdens together before the throne of grace.</p>
+            </div>
+
+            <form id="prayer-form" onsubmit="handlePrayerSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Your Name (or leave blank for Anonymous)</label>
+                  <input type="text" id="prayer-name" placeholder="Anonymous or your name" class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Email / WhatsApp (Optional for follow-up)</label>
+                  <input type="text" id="prayer-contact" placeholder="Phone or email for pastoral encouragement" class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-brand-charcoal mb-1">Area of Prayer *</label>
+                <select id="prayer-category" required class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                  <option value="Health & Healing">Health & Physical Healing</option>
+                  <option value="Family & Marriage">Family & Marriage Restoration</option>
+                  <option value="Spiritual Growth & Deliverance">Spiritual Growth & Deliverance</option>
+                  <option value="Job & Marketplace Provision">Job, Career & Marketplace Provision</option>
+                  <option value="Youth & Children">Youth, Vines & Children</option>
+                  <option value="Thanksgiving & Praise">Thanksgiving & Answered Prayer</option>
+                  <option value="Other">Other Personal Matter</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-brand-charcoal mb-1">Your Prayer Request Details *</label>
+                <textarea id="prayer-details" required rows="4" placeholder="Share your prayer needs openly here..." class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold"></textarea>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <input type="checkbox" id="prayer-pastor-reach" class="w-4 h-4 text-brand-gold rounded border-brand-ivory-dark focus:ring-brand-gold">
+                <label for="prayer-pastor-reach" class="text-xs text-brand-charcoal-light">
+                  I would appreciate an authorized pastor reaching out to pray with me personally.
+                </label>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="w-full sm:w-auto px-8 py-3 rounded-md bg-brand-gold text-brand-navy font-bold text-sm hover:bg-brand-gold-light transition-all shadow-gold flex items-center justify-center gap-2">
+                  <i data-lucide="shield-check" class="w-4 h-4"></i>
+                  <span>Submit Confidential Prayer Request</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- TAB 2: REQUEST COUNSELLING (Confidential) -->
+        <div id="tab-counsel" class="connect-panel hidden">
+          <div class="bg-white rounded-2xl p-6 sm:p-10 border border-brand-ivory-dark shadow-card space-y-6">
+            <div class="bg-brand-forest/10 border border-brand-forest/30 rounded-xl p-4 flex items-start gap-3">
+              <i data-lucide="heart" class="w-5 h-5 text-brand-forest flex-shrink-0 mt-0.5"></i>
+              <div class="text-xs text-brand-charcoal-light leading-relaxed">
+                <strong class="text-brand-forest font-semibold block">Confidential Pastoral Care Team</strong>
+                Our ordained counselling ministers offer sound biblical guidance, emotional encouragement, and prayerful wisdom in a safe, non-judgmental environment.
+              </div>
+            </div>
+
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-brand-navy">Request Pastoral Counselling</h3>
+              <p class="text-xs text-brand-charcoal-muted mt-1">Please provide your contact details so our pastoral care team can schedule a private session.</p>
+            </div>
+
+            <form id="counsel-form" onsubmit="handleCounselSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Full Name *</label>
+                  <input type="text" id="counsel-name" required placeholder="Your full name" class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Phone / WhatsApp Number *</label>
+                  <input type="tel" id="counsel-phone" required placeholder="+254 700 000000" class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Email Address</label>
+                  <input type="email" id="counsel-email" placeholder="you@example.com" class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Counselling Category *</label>
+                  <select id="counsel-cat" required class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                    <option value="Marriage & Premarital">Marriage, Courtship & Premarital</option>
+                    <option value="Family & Parenting">Family & Parenting Guidance</option>
+                    <option value="Grief & Loss">Grief, Bereavement & Loss</option>
+                    <option value="Personal Spiritual Crisis">Personal / Spiritual Crisis</option>
+                    <option value="Marketplace & Career Stress">Workplace Stress & Ethics</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-brand-charcoal mb-1">Preferred Meeting Mode</label>
+                <div class="flex gap-4 text-xs pt-1">
+                  <label class="inline-flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="counsel-mode" value="in-person" checked class="text-brand-gold">
+                    <span>In-Person (Pastoral Office)</span>
+                  </label>
+                  <label class="inline-flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="counsel-mode" value="virtual" class="text-brand-gold">
+                    <span>Private Video Call / Phone</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-brand-charcoal mb-1">Brief Description (Optional & strictly confidential)</label>
+                <textarea id="counsel-notes" rows="3" placeholder="Any background information you would like to share..." class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold"></textarea>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="w-full sm:w-auto px-8 py-3 rounded-md bg-brand-navy text-brand-ivory font-bold text-sm hover:bg-brand-navy-light transition-all shadow flex items-center justify-center gap-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-brand-gold"></i>
+                  <span>Submit Confidential Counselling Request</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- TAB 3: JOIN FELLOWSHIP -->
+        <div id="tab-join" class="connect-panel hidden">
+          <div class="bg-white rounded-2xl p-6 sm:p-10 border border-brand-ivory-dark shadow-card space-y-6">
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-brand-navy">Join Kristo Fellowship</h3>
+              <p class="text-xs text-brand-charcoal-muted mt-1">We welcome you with open arms into our spiritual family.</p>
+            </div>
+
+            <form id="join-form" onsubmit="handleJoinSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Full Name *</label>
+                  <input type="text" id="join-name" required placeholder="John Doe" class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">WhatsApp / Phone *</label>
+                  <input type="tel" id="join-phone" required placeholder="+254 700 000000" class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Email Address</label>
+                  <input type="email" id="join-email" placeholder="john@example.com" class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Your Residential Neighborhood / City</label>
+                  <input type="text" id="join-location" placeholder="e.g. Westlands, Kilimani, etc." class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-brand-charcoal mb-2">Pillars or Ministries You Are Interested In</label>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+                  <label class="flex items-center gap-2"><input type="checkbox" value="Family (Vines/Couples)" class="text-brand-gold"> Family Pillar</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" value="Community Hooks" class="text-brand-gold"> Community Hooks</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" value="Marketplace Guild" class="text-brand-gold"> Marketplace Guild</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" value="Worship & Prayer" class="text-brand-gold"> Worship & Prayer</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" value="Missions & Outreach" class="text-brand-gold"> Missions & Outreach</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" value="Word & Discipleship" class="text-brand-gold"> Word & Discipleship</label>
+                </div>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="w-full sm:w-auto px-8 py-3 rounded-md bg-brand-gold text-brand-navy font-bold text-sm hover:bg-brand-gold-light transition-all shadow-gold">
+                  Submit Membership & Connection Interest
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- TAB 4: VOLUNTEER -->
+        <div id="tab-volunteer" class="connect-panel hidden">
+          <div class="bg-white rounded-2xl p-6 sm:p-10 border border-brand-ivory-dark shadow-card space-y-6">
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-brand-navy">Volunteer & Serve</h3>
+              <p class="text-xs text-brand-charcoal-muted mt-1">Use your God-given gifts to build the body of Christ.</p>
+            </div>
+
+            <form id="volunteer-form" onsubmit="handleVolunteerSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Full Name *</label>
+                  <input type="text" id="vol-name" required placeholder="Jane Doe" class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Phone / WhatsApp *</label>
+                  <input type="tel" id="vol-phone" required placeholder="+254 700 000000" class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-brand-charcoal mb-2">Ministry Team You Wish to Serve In</label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                  <label class="p-3 rounded-lg border border-brand-ivory-dark flex items-center gap-2 cursor-pointer hover:bg-brand-ivory/40">
+                    <input type="radio" name="vol-team" value="Media, Sound & Digital Ministry" checked class="text-brand-gold">
+                    <span>Media, Sound & Digital Broadcast</span>
+                  </label>
+                  <label class="p-3 rounded-lg border border-brand-ivory-dark flex items-center gap-2 cursor-pointer hover:bg-brand-ivory/40">
+                    <input type="radio" name="vol-team" value="Worship & Music Team" class="text-brand-gold">
+                    <span>Worship & Music Team</span>
+                  </label>
+                  <label class="p-3 rounded-lg border border-brand-ivory-dark flex items-center gap-2 cursor-pointer hover:bg-brand-ivory/40">
+                    <input type="radio" name="vol-team" value="Vines (Children) Teaching" class="text-brand-gold">
+                    <span>Vines Children Teaching & Care</span>
+                  </label>
+                  <label class="p-3 rounded-lg border border-brand-ivory-dark flex items-center gap-2 cursor-pointer hover:bg-brand-ivory/40">
+                    <input type="radio" name="vol-team" value="Hospitality & Ushering" class="text-brand-gold">
+                    <span>Hospitality & Welcoming Team</span>
+                  </label>
+                  <label class="p-3 rounded-lg border border-brand-ivory-dark flex items-center gap-2 cursor-pointer hover:bg-brand-ivory/40">
+                    <input type="radio" name="vol-team" value="Outreach & Missions Support" class="text-brand-gold">
+                    <span>Outreach & Missions Support</span>
+                  </label>
+                  <label class="p-3 rounded-lg border border-brand-ivory-dark flex items-center gap-2 cursor-pointer hover:bg-brand-ivory/40">
+                    <input type="radio" name="vol-team" value="Pastoral Care Intercession" class="text-brand-gold">
+                    <span>Intercession & Prayer Altars</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-brand-charcoal mb-1">Your Skills, Background or Experience</label>
+                <textarea id="vol-skills" rows="3" placeholder="Tell us a little bit about your talents and availability..." class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold"></textarea>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="w-full sm:w-auto px-8 py-3 rounded-md bg-brand-navy text-brand-ivory font-bold text-sm hover:bg-brand-navy-light transition-all shadow">
+                  Submit Volunteer Application
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- TAB 5: GENERAL CONTACT -->
+        <div id="tab-contact" class="connect-panel hidden">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div class="md:col-span-5 bg-brand-navy text-brand-ivory p-8 rounded-2xl border border-brand-gold/30 space-y-6">
+              <h3 class="font-serif text-2xl font-bold text-brand-ivory">Fellowship Contact</h3>
+              <p class="text-xs text-brand-ivory/80 leading-relaxed">
+                Have questions regarding doctrines, meetings, partnership, or general inquiries? We would love to hear from you.
+              </p>
+
+              <div class="space-y-4 text-xs">
+                <div class="flex items-start gap-3">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5"></i>
+                  <div>
+                    <strong class="text-brand-ivory block font-semibold">Gathering Location</strong>
+                    <span class="text-brand-ivory/70">Main Fellowship Sanctuary & Community Centers</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <i data-lucide="mail" class="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5"></i>
+                  <div>
+                    <strong class="text-brand-ivory block font-semibold">Official Email</strong>
+                    <span class="text-brand-ivory/70">info@kristofellowship.org</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <i data-lucide="phone" class="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5"></i>
+                  <div>
+                    <strong class="text-brand-ivory block font-semibold">Phone / WhatsApp Desk</strong>
+                    <span class="text-brand-ivory/70">+254 700 000 000 / Dedicated WhatsApp</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-brand-ivory/10">
+                <div class="text-[11px] uppercase tracking-wider text-brand-gold mb-2 font-semibold">Social Channels</div>
+                <div class="flex gap-3">
+                  <a href="https://youtube.com" target="_blank" class="w-8 h-8 rounded bg-brand-navy-light flex items-center justify-center text-brand-ivory hover:text-brand-gold transition-colors"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                  <a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded bg-brand-navy-light flex items-center justify-center text-brand-ivory hover:text-brand-gold transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                  <a href="https://instagram.com" target="_blank" class="w-8 h-8 rounded bg-brand-navy-light flex items-center justify-center text-brand-ivory hover:text-brand-gold transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="md:col-span-7 bg-white p-8 rounded-2xl border border-brand-ivory-dark shadow-card">
+              <h4 class="font-serif text-xl font-bold text-brand-navy mb-4">Send Us a Direct Message</h4>
+              <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Your Name *</label>
+                  <input type="text" id="contact-name" required placeholder="Your name" class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Email / Phone *</label>
+                  <input type="text" id="contact-email" required placeholder="Email or phone" class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Subject</label>
+                  <input type="text" id="contact-subject" placeholder="What is this regarding?" class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-brand-charcoal mb-1">Message *</label>
+                  <textarea id="contact-message" required rows="4" placeholder="How can we assist you?" class="w-full px-3.5 py-2.5 rounded-lg border border-brand-ivory-dark bg-brand-ivory/30 text-sm focus:outline-none focus:border-brand-gold"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 rounded-md bg-brand-navy text-brand-ivory font-bold text-sm hover:bg-brand-navy-light transition-all shadow">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- FOOTER -->
+  <!-- ========================================== -->
+  <footer class="bg-brand-navy text-brand-ivory pt-16 pb-12 border-t-2 border-brand-gold/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-brand-ivory/10">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="#home" onclick="navigateTo('home')" class="inline-block group py-1">
+            <img src="assets/logo-full-transparent.png" alt="Kristo Fellowship" class="h-13 sm:h-14 w-auto object-contain drop-shadow group-hover:scale-105 transition-transform duration-200">
+          </a>
+
+          <p class="text-xs text-brand-ivory/70 leading-relaxed max-w-sm">
+            Professing God's Love • Advancing His Kingdom • Empowering Change Agents. Equipping individuals and families through Word, worship, relationships, community and service.
+          </p>
+
+          <div class="pt-2">
+            <button onclick="openIntercessorPortal()" class="text-[11px] text-brand-gold/70 hover:text-brand-gold flex items-center gap-1.5 border border-brand-gold/30 px-2.5 py-1 rounded">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-brand-gold"></i>
+              <span>Authorized Pastoral Portal (Staff View)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Column 1: Navigation -->
+        <div class="space-y-3">
+          <h4 class="font-serif text-sm font-bold text-brand-gold uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2 text-xs text-brand-ivory/75">
+            <li><a href="#home" onclick="navigateTo('home')" class="hover:text-brand-gold transition-colors">Home</a></li>
+            <li><a href="#about" onclick="navigateTo('about')" class="hover:text-brand-gold transition-colors">About Us</a></li>
+            <li><a href="#pillars" onclick="navigateTo('pillars')" class="hover:text-brand-gold transition-colors">Seven Pillars</a></li>
+            <li><a href="#messages" onclick="navigateTo('messages')" class="hover:text-brand-gold transition-colors">Messages & Sermons</a></li>
+            <li><a href="#community" onclick="navigateTo('community')" class="hover:text-brand-gold transition-colors">Community Hooks</a></li>
+            <li><a href="#connect" onclick="navigateTo('connect')" class="hover:text-brand-gold transition-colors">Connect & Volunteer</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Pillars & Ministries -->
+        <div class="space-y-3">
+          <h4 class="font-serif text-sm font-bold text-brand-gold uppercase tracking-wider">The 7 Pillars</h4>
+          <ul class="space-y-2 text-xs text-brand-ivory/75">
+            <li><a href="#pillars" onclick="navigateTo('pillars', 'pillar-family')" class="hover:text-brand-gold transition-colors">1. Family (Vines & Couples)</a></li>
+            <li><a href="#pillars" onclick="navigateTo('pillars', 'pillar-word')" class="hover:text-brand-gold transition-colors">2. Word & Discipleship</a></li>
+            <li><a href="#pillars" onclick="navigateTo('pillars', 'pillar-worship')" class="hover:text-brand-gold transition-colors">3. Worship & Altars</a></li>
+            <li><a href="#pillars" onclick="navigateTo('pillars', 'pillar-care')" class="hover:text-brand-gold transition-colors">4. Care & Counselling</a></li>
+            <li><a href="#pillars" onclick="navigateTo('pillars', 'pillar-community')" class="hover:text-brand-gold transition-colors">5. Community & Hooks</a></li>
+            <li><a href="#pillars" onclick="navigateTo('pillars', 'pillar-missions')" class="hover:text-brand-gold transition-colors">6. Missions & Outreach</a></li>
+            <li><a href="#pillars" onclick="navigateTo('pillars', 'pillar-marketplace')" class="hover:text-brand-gold transition-colors">7. Marketplace Guild</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Care & Security -->
+        <div class="space-y-3">
+          <h4 class="font-serif text-sm font-bold text-brand-gold uppercase tracking-wider">Confidential Support</h4>
+          <ul class="space-y-2 text-xs text-brand-ivory/75">
+            <li><a href="#connect" onclick="navigateTo('connect', 'tab-prayer')" class="hover:text-brand-gold transition-colors flex items-center gap-1"><i data-lucide="lock" class="w-3 h-3 text-brand-gold"></i> Prayer Request (Private)</a></li>
+            <li><a href="#connect" onclick="navigateTo('connect', 'tab-counsel')" class="hover:text-brand-gold transition-colors flex items-center gap-1"><i data-lucide="heart" class="w-3 h-3 text-brand-forest"></i> Pastoral Counselling</a></li>
+            <li><a href="javascript:void(0)" onclick="openPrivacyModal()" class="hover:text-brand-gold transition-colors">Privacy & Data Policy</a></li>
+            <li><a href="javascript:void(0)" onclick="openGivingNotice()" class="hover:text-brand-gold transition-colors text-brand-ivory/50">Online Giving (Phase 2)</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-brand-ivory/60 gap-4">
+        <div>
+          © 2026 Kristo Fellowship. All rights reserved.
+        </div>
+        <div class="flex items-center gap-4">
+          <button onclick="openPrivacyModal()" class="hover:text-brand-gold underline">Privacy Policy</button>
+          <span>•</span>
+          <button onclick="openTermsModal()" class="hover:text-brand-gold underline">Fellowship Charter</button>
+          <span>•</span>
+          <span class="text-brand-gold">MVP Release v1.0</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- MODAL: YOUTUBE VIDEO TEACHING PLAYER -->
+  <!-- ========================================== -->
+  <div id="video-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-brand-navy rounded-2xl overflow-hidden max-w-3xl w-full border border-brand-gold/30 shadow-2xl relative">
+      <div class="p-4 bg-brand-navy-dark flex items-center justify-between border-b border-brand-gold/20">
+        <div>
+          <h3 id="modal-video-title" class="font-serif text-brand-ivory text-base font-bold">Video Teaching</h3>
+          <p id="modal-video-speaker" class="text-xs text-brand-gold">Kristo Fellowship</p>
+        </div>
+        <button onclick="closeVideoModal()" class="p-1 rounded-md text-brand-ivory hover:text-brand-gold hover:bg-brand-navy transition-colors">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <div class="aspect-video bg-black">
+        <iframe id="modal-video-iframe" class="w-full h-full" src="" title="YouTube Video Teaching" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="p-4 bg-brand-navy text-xs text-brand-ivory/70 flex justify-between items-center">
+        <span>Hosted via YouTube Embed (MVP Specification)</span>
+        <button onclick="closeVideoModal()" class="px-4 py-1.5 rounded bg-brand-gold text-brand-navy font-semibold hover:bg-brand-gold-light">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: QUICK PRAYER SUBMISSION -->
+  <!-- ========================================== -->
+  <div id="prayer-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl overflow-hidden max-w-lg w-full border border-brand-ivory-dark shadow-2xl relative">
+      <div class="p-5 bg-brand-navy text-brand-ivory flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i data-lucide="shield" class="w-5 h-5 text-brand-gold"></i>
+          <h3 class="font-serif text-lg font-bold">Confidential Prayer Altar</h3>
+        </div>
+        <button onclick="closePrayerModal()" class="text-brand-ivory/70 hover:text-brand-gold">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="p-6 space-y-4">
+        <div class="text-xs text-brand-charcoal-muted leading-relaxed">
+          Your prayer need will be received solely by designated intercessors and kept strictly confidential.
+        </div>
+        <form onsubmit="handleQuickPrayerSubmit(event)" class="space-y-3">
+          <div>
+            <label class="block text-xs font-semibold text-brand-charcoal mb-1">Your Name (Optional)</label>
+            <input type="text" id="quick-prayer-name" placeholder="Leave empty for Anonymous" class="w-full px-3 py-2 rounded-lg border border-brand-ivory-dark text-xs focus:outline-none focus:border-brand-gold">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-brand-charcoal mb-1">Category *</label>
+            <select id="quick-prayer-cat" required class="w-full px-3 py-2 rounded-lg border border-brand-ivory-dark text-xs focus:outline-none focus:border-brand-gold">
+              <option value="Health & Healing">Health & Healing</option>
+              <option value="Family Restoration">Family Restoration</option>
+              <option value="Spiritual Breakthrough">Spiritual Breakthrough</option>
+              <option value="Career & Provision">Career & Provision</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-brand-charcoal mb-1">Prayer Need *</label>
+            <textarea id="quick-prayer-text" required rows="3" placeholder="Type your prayer request here..." class="w-full px-3 py-2 rounded-lg border border-brand-ivory-dark text-xs focus:outline-none focus:border-brand-gold"></textarea>
+          </div>
+          <div class="pt-2 flex justify-end gap-2">
+            <button type="button" onclick="closePrayerModal()" class="px-4 py-2 text-xs font-medium text-brand-charcoal hover:bg-brand-ivory rounded">Cancel</button>
+            <button type="submit" class="px-5 py-2 text-xs font-semibold rounded bg-brand-gold text-brand-navy hover:bg-brand-gold-light shadow-gold">Submit To Altar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: PRIVACY POLICY (PRD Section 9) -->
+  <!-- ========================================== -->
+  <div id="privacy-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col border border-brand-ivory-dark shadow-2xl">
+      <div class="p-5 bg-brand-navy text-brand-ivory flex items-center justify-between border-b border-brand-gold/20">
+        <h3 class="font-serif text-lg font-bold">Kristo Fellowship Privacy Notice</h3>
+        <button onclick="closePrivacyModal()" class="text-brand-ivory/70 hover:text-brand-gold"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <div class="p-6 overflow-y-auto space-y-4 text-xs text-brand-charcoal-light leading-relaxed custom-scroll">
+        <h4 class="font-bold text-sm text-brand-navy">1. Strict Pastoral Confidentiality</h4>
+        <p>In accordance with Section 9 of the Kristo Fellowship Product Requirements Document, prayer and counselling submissions remain strictly private and will never appear publicly under any circumstances. Access is restricted exclusively to specifically vetted and authorized pastoral intercessors.</p>
+        
+        <h4 class="font-bold text-sm text-brand-navy">2. Minimum Data Collection</h4>
+        <p>We collect only the information necessary to minister to you. When requesting prayer, you are free to submit completely anonymously without providing your name or telephone number.</p>
+
+        <h4 class="font-bold text-sm text-brand-navy">3. Third-Party Integrations</h4>
+        <p>For MVP video streaming, we embed video players via YouTube. We do not sell, rent, or distribute member or visitor personal data to commercial third parties.</p>
+
+        <h4 class="font-bold text-sm text-brand-navy">4. Contact & Inquiries</h4>
+        <p>For inquiries regarding data privacy or to request the deletion of your pastoral record, contact our data steward at privacy@kristofellowship.org.</p>
+      </div>
+      <div class="p-4 bg-brand-ivory border-t border-brand-ivory-dark flex justify-end">
+        <button onclick="closePrivacyModal()" class="px-5 py-2 rounded bg-brand-navy text-brand-ivory text-xs font-semibold hover:bg-brand-navy-light">Close Policy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: AUTHORIZED INTERCESSOR SECURE PORTAL (Staff Demo) -->
+  <!-- ========================================== -->
+  <div id="intercessor-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col border border-brand-gold/40 shadow-2xl">
+      <div class="p-5 bg-brand-navy text-brand-ivory flex items-center justify-between border-b border-brand-gold/30">
+        <div class="flex items-center gap-2">
+          <i data-lucide="shield-alert" class="w-5 h-5 text-brand-gold"></i>
+          <div>
+            <h3 class="font-serif text-lg font-bold">Pastoral Intercessor Vault (Staff Access)</h3>
+            <p class="text-[10px] text-brand-gold">PRD Section 6 & 9: Secure private submission review</p>
+          </div>
+        </div>
+        <button onclick="closeIntercessorPortal()" class="text-brand-ivory/70 hover:text-brand-gold"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <div class="p-6 overflow-y-auto space-y-4 custom-scroll">
+        <div class="bg-amber-50 border border-amber-200 text-amber-900 p-3 rounded-lg text-xs flex items-center justify-between">
+          <span>🔒 Authorized Session: Showing confidential prayer & counselling submissions received on this device.</span>
+          <button onclick="clearDemoData()" class="text-[11px] font-semibold text-red-600 hover:underline">Clear Vault</button>
+        </div>
+
+        <div id="vault-items-container" class="space-y-3">
+          <!-- Dynamically populated from localStorage -->
+        </div>
+      </div>
+      <div class="p-4 bg-brand-ivory border-t border-brand-ivory-dark flex justify-between items-center text-xs">
+        <span class="text-brand-charcoal-muted">All submissions encrypted at rest</span>
+        <button onclick="closeIntercessorPortal()" class="px-5 py-2 rounded bg-brand-navy text-brand-ivory text-xs font-semibold hover:bg-brand-navy-light">Close Portal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <!-- ========================================== -->
+  <div id="toast-box" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 max-w-sm pointer-events-none"></div>
+
+  <!-- ========================================== -->
+  <!-- CLIENT-SIDE APPLICATION SCRIPT -->
+  <!-- ========================================== -->
+  <script>
+    // Initialize Lucide Icons
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      initDefaultVaultData();
+      checkHashNavigation();
+    });
+
+    // SPA Router Navigation
+    function navigateTo(pageId, subTarget) {
+      // Hide all views
+      document.querySelectorAll('.view-section').forEach(view => {
+        view.classList.remove('active');
+      });
+
+      // Show requested view
+      const targetView = document.getElementById(`view-${pageId}`);
+      if (targetView) {
+        targetView.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Update active nav styling
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('data-page') === pageId) {
+          link.classList.add('text-brand-gold', 'bg-brand-navy-light/60');
+          link.classList.remove('text-brand-ivory/85', 'hover:bg-brand-navy-light/40');
+        } else {
+          link.classList.remove('text-brand-gold', 'bg-brand-navy-light/60');
+          link.classList.add('text-brand-ivory/85', 'hover:bg-brand-navy-light/40');
+        }
+      });
+
+      // Handle sub-targets (e.g., connect tabs or pillar deep links)
+      if (subTarget) {
+        setTimeout(() => {
+          if (subTarget.startsWith('tab-')) {
+            switchConnectTab(subTarget);
+          } else {
+            const el = document.getElementById(subTarget);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 150);
+      }
+    }
+
+    // Hash change handler for direct links (#about, #pillars, etc.)
+    window.addEventListener('hashchange', checkHashNavigation);
+    function checkHashNavigation() {
+      const hash = window.location.hash.replace('#', '');
+      if (['home', 'about', 'pillars', 'messages', 'community', 'connect'].includes(hash)) {
+        navigateTo(hash);
+      }
+    }
+
+    // Toggle Mobile Navigation Drawer
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Connect Section Tab Switcher
+    function switchConnectTab(tabId) {
+      document.querySelectorAll('.connect-panel').forEach(panel => {
+        panel.classList.add('hidden');
+      });
+      const activePanel = document.getElementById(tabId);
+      if (activePanel) activePanel.classList.remove('hidden');
+
+      document.querySelectorAll('.connect-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-brand-navy', 'text-brand-gold', 'shadow');
+        btn.classList.add('bg-white', 'text-brand-charcoal');
+      });
+      const activeBtn = document.getElementById(`tab-btn-${tabId.replace('tab-', '')}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-white', 'text-brand-charcoal');
+        activeBtn.classList.add('bg-brand-navy', 'text-brand-gold', 'shadow');
+      }
+    }
+
+    // Filter Messages and Teachings
+    function filterMessages() {
+      const query = document.getElementById('messages-search').value.toLowerCase();
+      const topic = document.getElementById('messages-topic').value;
+      const format = document.getElementById('messages-format').value;
+
+      const cards = document.querySelectorAll('.message-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const cardTopic = card.getAttribute('data-topic');
+        const cardFormat = card.getAttribute('data-format');
+
+        const matchesQuery = !query || text.includes(query);
+        const matchesTopic = (topic === 'all') || (cardTopic === topic);
+        const matchesFormat = (format === 'all') || (cardFormat === format);
+
+        if (matchesQuery && matchesTopic && matchesFormat) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.getElementById('messages-count').innerText = `Showing ${visibleCount} resource${visibleCount === 1 ? '' : 's'}`;
+    }
+
+    // YouTube Video Modal Player
+    function playVideo(youtubeId, title, speaker) {
+      const modal = document.getElementById('video-modal');
+      const iframe = document.getElementById('modal-video-iframe');
+      document.getElementById('modal-video-title').innerText = title;
+      document.getElementById('modal-video-speaker').innerText = speaker;
+      
+      // Load YouTube embed
+      iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+      modal.classList.remove('hidden');
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('video-modal');
+      const iframe = document.getElementById('modal-video-iframe');
+      iframe.src = '';
+      modal.classList.add('hidden');
+    }
+
+    function openYouTubeStream() {
+      playVideo('dQw4w9WgXcQ', 'Kristo Fellowship Sunday Gathering & Word Broadcast', 'Live Broadcast Team');
+    }
+
+    // Modals: Quick Prayer
+    function openPrayerModal() {
+      document.getElementById('prayer-modal').classList.remove('hidden');
+    }
+    function closePrayerModal() {
+      document.getElementById('prayer-modal').classList.add('hidden');
+    }
+
+    // Modals: Privacy
+    function openPrivacyModal() {
+      document.getElementById('privacy-modal').classList.remove('hidden');
+    }
+    function closePrivacyModal() {
+      document.getElementById('privacy-modal').classList.add('hidden');
+    }
+
+    function openTermsModal() {
+      showToast("Fellowship Charter", "Kristo Fellowship functions under the biblical governance of Christ-centred stewardship.", "info");
+    }
+
+    function openGivingNotice() {
+      showToast("Online Giving (Phase 2)", "In accordance with Section 7 of the MVP requirements, online giving and financial integrations are slated for Phase 2.", "info");
+    }
+
+    // WhatsApp Action Simulation
+    function openWhatsAppModal(groupName) {
+      showToast("WhatsApp Community", `Opening verified invite link for: ${groupName}...`, "success");
+      // Simulated link opening
+      setTimeout(() => {
+        window.open(`https://chat.whatsapp.com/sampleInviteCode`, '_blank');
+      }, 500);
+    }
+
+    function joinHook(hookName, lead) {
+      showToast("Community Hook", `Connecting you to ${hookName} (Lead: ${lead})...`, "success");
+      navigateTo('connect', 'tab-join');
+    }
+
+    function downloadStudyNotes(title) {
+      showToast("Study Notes Downloaded", `Saved: "${title}" (PDF notes outline).`, "success");
+    }
+
+    function playAudioMessage(title) {
+      showToast("Playing Audio Teaching", `Streaming: ${title}`, "info");
+    }
+
+    // Confidential Submissions Management (PRD Section 6 & 9)
+    function saveConfidentialSubmission(item) {
+      let vault = JSON.parse(localStorage.getItem('kristo_vault') || '[]');
+      vault.unshift(item);
+      localStorage.setItem('kristo_vault', JSON.stringify(vault));
+    }
+
+    function handlePrayerSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('prayer-name').value || 'Anonymous';
+      const contact = document.getElementById('prayer-contact').value || 'None provided';
+      const category = document.getElementById('prayer-category').value;
+      const details = document.getElementById('prayer-details').value;
+      const reachOut = document.getElementById('prayer-pastor-reach').checked;
+
+      const refCode = 'KF-PR-' + Math.floor(100000 + Math.random() * 900000);
+
+      saveConfidentialSubmission({
+        type: 'Prayer Request',
+        ref: refCode,
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' }),
+        name: name,
+        contact: contact,
+        category: category,
+        details: details,
+        pastoralFollowUp: reachOut
+      });
+
+      e.target.reset();
+      showToast("Prayer Received Safely", `Reference: ${refCode}. Your request is strictly confidential with our intercessors.`, "success");
+    }
+
+    function handleQuickPrayerSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('quick-prayer-name').value || 'Anonymous';
+      const category = document.getElementById('quick-prayer-cat').value;
+      const details = document.getElementById('quick-prayer-text').value;
+      const refCode = 'KF-QP-' + Math.floor(100000 + Math.random() * 900000);
+
+      saveConfidentialSubmission({
+        type: 'Prayer Request (Quick)',
+        ref: refCode,
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' }),
+        name: name,
+        category: category,
+        details: details
+      });
+
+      closePrayerModal();
+      e.target.reset();
+      showToast("Prayer Submitted", `Reference: ${refCode}. Lifted up before the throne of grace.`, "success");
+    }
+
+    function handleCounselSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('counsel-name').value;
+      const phone = document.getElementById('counsel-phone').value;
+      const email = document.getElementById('counsel-email').value || 'None';
+      const cat = document.getElementById('counsel-cat').value;
+      const notes = document.getElementById('counsel-notes').value || 'No additional notes';
+      const refCode = 'KF-CS-' + Math.floor(100000 + Math.random() * 900000);
+
+      saveConfidentialSubmission({
+        type: 'Pastoral Counselling Request',
+        ref: refCode,
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' }),
+        name: name,
+        contact: `${phone} | ${email}`,
+        category: cat,
+        details: notes
+      });
+
+      e.target.reset();
+      showToast("Counselling Request Dispatched", `Reference: ${refCode}. An authorized minister will reach out with utmost discretion.`, "success");
+    }
+
+    function handleJoinSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('join-name').value;
+      const phone = document.getElementById('join-phone').value;
+      showToast("Welcome to Kristo Fellowship!", `Thank you, ${name}. Our community team will welcome you shortly.`, "success");
+      e.target.reset();
+    }
+
+    function handleVolunteerSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('vol-name').value;
+      showToast("Volunteer Application Received", `Thank you, ${name}! A ministry coordinator will be in touch with you.`, "success");
+      e.target.reset();
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      showToast("Message Sent", "Thank you for contacting Kristo Fellowship. We will reply promptly.", "success");
+      e.target.reset();
+    }
+
+    // Intercessor Portal (Demonstrating PRD Section 6 & 9)
+    function initDefaultVaultData() {
+      if (!localStorage.getItem('kristo_vault')) {
+        const samples = [
+          {
+            type: 'Prayer Request',
+            ref: 'KF-PR-482910',
+            date: 'Nov 24, 2026, 09:30 AM',
+            name: 'Grace W.',
+            contact: '+254 722 000000',
+            category: 'Family & Marriage',
+            details: 'Praying for peaceful resolution and divine wisdom in our home with our teenage son.',
+            pastoralFollowUp: true
+          },
+          {
+            type: 'Pastoral Counselling Request',
+            ref: 'KF-CS-194022',
+            date: 'Nov 23, 2026, 04:15 PM',
+            name: 'Confidential Member',
+            contact: 'member@private.org',
+            category: 'Marketplace & Career Stress',
+            details: 'Seeking ethical guidance regarding a high-stakes business transition.',
+            pastoralFollowUp: true
+          }
+        ];
+        localStorage.setItem('kristo_vault', JSON.stringify(samples));
+      }
+    }
+
+    function openIntercessorPortal() {
+      const modal = document.getElementById('intercessor-modal');
+      const container = document.getElementById('vault-items-container');
+      const vault = JSON.parse(localStorage.getItem('kristo_vault') || '[]');
+
+      if (vault.length === 0) {
+        container.innerHTML = '<p class="text-xs text-brand-charcoal-muted py-6 text-center">No confidential submissions currently in vault.</p>';
+      } else {
+        container.innerHTML = vault.map(item => `
+          <div class="p-4 rounded-xl border border-brand-ivory-dark bg-brand-ivory/30 space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-bold text-brand-navy flex items-center gap-1.5">
+                <i data-lucide="${item.type.includes('Counselling') ? 'heart' : 'shield'}" class="w-3.5 h-3.5 text-brand-gold-dark"></i>
+                ${item.type}
+              </span>
+              <span class="font-mono text-[10px] text-brand-charcoal-muted bg-white px-2 py-0.5 rounded border border-brand-ivory-dark">${item.ref}</span>
+            </div>
+            <div class="text-[11px] text-brand-charcoal-muted">
+              Submitted: <strong>${item.date}</strong> • From: <strong>${item.name}</strong> (${item.contact || 'No phone/email'})
+            </div>
+            <div class="text-xs text-brand-navy font-semibold">Category: ${item.category}</div>
+            <p class="text-xs text-brand-charcoal leading-relaxed bg-white p-2.5 rounded border border-brand-ivory-dark italic">
+              "${item.details}"
+            </p>
+            ${item.pastoralFollowUp ? '<span class="inline-block text-[10px] text-brand-forest font-semibold">✓ Pastoral reach-out requested</span>' : ''}
+          </div>
+        `).join('');
+      }
+
+      modal.classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeIntercessorPortal() {
+      document.getElementById('intercessor-modal').classList.add('hidden');
+    }
+
+    function clearDemoData() {
+      if (confirm("Are you sure you want to clear simulated vault items?")) {
+        localStorage.removeItem('kristo_vault');
+        openIntercessorPortal();
+      }
+    }
+
+    // Toast Notifications
+    function showToast(title, message, type = 'info') {
+      const box = document.getElementById('toast-box');
+      const toast = document.createElement('div');
+      
+      const icon = type === 'success' ? 'check-circle' : 'info';
+      const borderCol = type === 'success' ? 'border-brand-gold' : 'border-brand-navy';
+
+      toast.className = `p-4 rounded-xl bg-brand-navy text-brand-ivory border ${borderCol} shadow-2xl pointer-events-auto transform transition-all duration-300 translate-y-2 opacity-0 flex items-start gap-3`;
+      toast.innerHTML = `
+        <i data-lucide="${icon}" class="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5"></i>
+        <div class="space-y-0.5">
+          <div class="font-serif text-xs font-bold text-brand-gold">${title}</div>
+          <div class="text-[11px] text-brand-ivory/80 leading-snug">${message}</div>
+        </div>
+      `;
+      box.appendChild(toast);
+      lucide.createIcons();
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 4500);
+    }
+  </script>
 </body>
 </html>
